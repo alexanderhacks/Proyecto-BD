@@ -5,6 +5,10 @@ tarjeta({numero}, {cliente.tipo_dni}, {cliente.n_dni, ccv}, vencimiento, nombres
 membresia({nombre}, costo)
 socio(cliente.tipo_cni, cliente.n_dni, membresia.nombre)
 
+sede({nombre}, direccion, hora_apertura, hora_cierre, n_salas)
+sala({numero}, n_butacas)
+entrada({codigo}, {sede.nombre}, {sala.numero}, fecha, hora, fila_butaca, columna_butaca)
+
 Agentes:
 
 Trabajadores:
