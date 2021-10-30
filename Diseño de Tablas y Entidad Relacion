@@ -1,5 +1,10 @@
 Cadena de cines en Perú:
 
+cliente({tipo_dni}, {n_dni}, nombres, correo, telefono)
+tarjeta({numero}, {cliente.tipo_dni}, {cliente.n_dni, ccv}, vencimiento, nombres)
+membresia({nombre}, costo)
+socio(cliente.tipo_cni, cliente.n_dni, membresia.nombre)
+
 Agentes:
 
 Trabajadores:
