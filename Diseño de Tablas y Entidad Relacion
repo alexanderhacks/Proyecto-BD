@@ -32,7 +32,7 @@ PagoTarjeta {id, id_venta}, banco, nro_cuenta, monto
 
 Alimentos: {id_alimento}, nombre, precio_venta
 Promociones: {id_promocion}, precio_venta, descuento
-
+Asientos: {id_asientos}, sala, ocupado
 
 
 Clientes(tarjeta_credito
