@@ -1,7 +1,7 @@
 Cadena de cines en Perú:
 
 cliente({tipo_dni}, {n_dni}, nombres, correo, telefono)
-tarjeta({numero}, {cliente.tipo_dni}, {cliente.n_dni, ccv}, vencimiento, nombres)
+tarjeta({numero}, {cliente.tipo_dni}, {cliente.n_dni}, ccv, vencimiento, nombres)
 membresia({nombre}, costo)
 miembro(cliente.tipo_dni, cliente.n_dni, membresia.nombre)
 
@@ -12,9 +12,9 @@ pelicula({id}, {nombre}, {lenguaje}, fecha_adquisicion, duracion)
 alimento({id}, nombre, costo)
 funcion({fecha}, {hora}, {sala.id}, {sala.numero}, pelicula.nombre, pelicula.lenguaje)
 
-venta({cliente.tipo_dni}, {sede.id}, {fecha})
-venta_entrada({venta.tipo_dni}, {venta.nombre}, {funcion.fecha}, {funcion.hora} {funcion.numero}, {fila_butaca}, {columna_butaca})
-venta_alimento({venta.tipo_dni}, {venta.nombre}, {venta.fecha}, alimento.id)
+venta({cliente.tipo_dni}, {cliente.n_dni}, {sede.id}, {fecha})
+venta_entrada({venta.tipo_dni}, {venta.n_dni}, {venta.id}, {funcion.fecha}, {funcion.hora} {funcion.numero}, {fila_butaca}, {columna_butaca})
+venta_alimento({venta.tipo_dni}, {venta.n_dni}, {venta.id}, {venta.fecha}, alimento.id)
 
 Agentes:
 
