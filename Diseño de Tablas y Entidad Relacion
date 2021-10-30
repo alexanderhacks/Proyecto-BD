@@ -7,7 +7,13 @@ socio(cliente.tipo_cni, cliente.n_dni, membresia.nombre)
 
 sede({nombre}, direccion, hora_apertura, hora_cierre, n_salas)
 sala({numero}, n_butacas)
-entrada({codigo}, {sede.nombre}, {sala.numero}, fecha, hora, fila_butaca, columna_butaca)
+
+pelicula({nombre}, {lenguaje}, fecha_adquisicion, duracion)
+funcion({fecha}, {hora}, {sede.nombre}, {sala.numero}, pelicula.nombre, pelicula.lenguaje)
+
+venta({cliente.tipo_dni}, {sede.nombre}, {fecha})
+venta_entrada({venta.tipo_dni}, {venta.nombre}, {sala.numero}, {fila_butaca}, {columna_butaca}, venta.fecha, hora)
+venta_alimento({venta.tipo_dni}, {venta.nombre}, id_alimento, venta.fecha, )
 
 Agentes:
 
