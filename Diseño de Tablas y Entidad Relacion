@@ -1,0 +1,38 @@
+Cadena de cines en Perú:
+
+Agentes:
+
+Trabajadores:
+Colaboradores: {nro_documento, tipo_documento}, nombres, apellidos, nro_telefonico, correo, nro_cuenta, sueldo
+Trabajador_Seguridad: {nro_documento, tipo_documento}
+Trabajador_Ventas: {nro_documento, tipo_documento}
+Trabajador_Administrador: {nro_documento, tipo_documento}
+Trabajador_Finanzas: {nro_documento, tipo_documento}
+Trabajador_Marketing: {nro_documento, tipo_documento}
+Trabajador_Distribución: {nro_documento, tipo_documento}
+Trabajador_Limpieza: {nro_documento, tipo_documento}
+Trabajador_TecnologíaSistemas: {nro_documento, tipo_documento}
+Trabajador_InnovacionContenido: {nro_documento, tipo_documento}
+Trabajador_Personal: {nro_documento, tipo_documento}
+
+Clientes:
+
+Cliente: {nro_documento, tipo_documento}, nombres, apellidos, nro_telefonico, correo, dirección(null), departamento (null)
+Socios: {nro_documento, tipo_documento}, tipo_credencial, cantidad_entradas
+
+Ventas:
+
+1. Entrada
+CompraEntrada{id_venta}, película, tipo_entrada, cantidad_entradas, fecha, hora_funcion, tipo_pago, monto
+TipoEntrada {id_tipoEntrada}, nombre, descuento, localidad
+TipoPago {id} nombre
+PagoTarjeta {id, id_venta}, banco, nro_cuenta, monto
+
+2. Productos
+
+Alimentos: {id_alimento}, nombre, precio_venta
+Promociones: {id_promocion}, precio_venta, descuento
+
+
+
+Clientes(tarjeta_credito
