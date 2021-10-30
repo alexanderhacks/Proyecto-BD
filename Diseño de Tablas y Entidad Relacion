@@ -6,14 +6,17 @@ membresia({nombre}, costo)
 miembro(cliente.tipo_dni, cliente.n_dni, membresia.nombre)
 
 sede({id}, nombre, direccion,departamento, distrito,  hora_apertura, hora_cierre, n_salas)
-sala({sede.id}, {numero}, n_butacas)
-
 pelicula({id}, {nombre}, {lenguaje}, fecha_adquisicion, duracion)
 alimento({id}, nombre, costo)
-funcion({fecha}, {hora}, {sala.id}, {sala.numero}, pelicula.nombre, pelicula.lenguaje)
+
+sala({id}, {sede.id}, {numero}, n_butacas)
+funcion({fecha}, {hora}, {sala.id}, pelicula.nombre, pelicula.lenguaje)
+butaca({fecha, hora, sala.id, nro_butaca, es_activo, venta_entrada.id})
+-- Table View: Para los cajeros
+funcion_butacas{funcion.fecha, funcion.hora, sala.numero, sede.direccion, pelicula.nombre, pelicula.lenguaje, venta.id, venta.cantidad_entradas}
 
 venta({cliente.tipo_dni}, {cliente.n_dni}, {sede.id}, {fecha})
-venta_entrada({venta.tipo_dni}, {venta.n_dni}, {venta.id}, {funcion.fecha}, {funcion.hora} {funcion.numero}, {fila_butaca}, {columna_butaca})
+venta_entrada({venta.tipo_dni}, {venta.n_dni}, {venta.id}, {funcion.fecha}, {funcion.hora} {funcion.numero}, {fila_butaca}, {columna_butaca}, cantidad_entradas)
 venta_alimento({venta.tipo_dni}, {venta.n_dni}, {venta.id}, {venta.fecha}, alimento.id)
 
 Agentes:
@@ -28,6 +31,7 @@ CREATE SCHEMA tacna;
 Colaboradores: {nro_documento, tipo_documento}, nombres, apellidos, nro_telefonico, correo, nro_cuenta
 AreaTrabajo: {id}, nombre
 SueldoColaborador: {nro_contrato}, AreaTrabajo.id, especialidad, Colaboradores.nro_documento, Colaboradores.tipo_documento, sueldo
+Administradores: Colaboradores.{nro_documento, tipo_documento}, correo, password, nivel_permisos (range 1-3: básico, intermedio, avanzando, seguridad de vistas)
 
 
 
