@@ -15,7 +15,7 @@ niveles_publico({id}, rango_edad}
 
 -- Productos
 producto({id}, nombre, precio_venta)
-insumo({id}, nombre, cantidad, precio_costo)
+insumo({id}, nombre, cantidad, precio_costo, descripcion)
 
 
 -- Funciones de película
