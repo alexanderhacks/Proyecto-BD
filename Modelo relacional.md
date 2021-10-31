@@ -80,17 +80,7 @@ UsuarioCliente(Cliente.id, Usuario.id, telefono, CuentaBancaria.id)
 ```
 Sede({id}, nombre, direccion, departamento, distrito, n_salas)
 ```
-## Produccion
-```
-Directores({id}, nombres)
-Actores({id}, nombres)
-Produccion({Peliculas.id}, Actores.id, Director.id)
 
-```
-## Actores
-```
-
-```
 ## Peliculas
 ```
 
@@ -98,7 +88,13 @@ Peliculas({id}, nombre, idioma, fecha_adquisión, fecha_estreno, genero, duracio
 Genero({id}, nombre_genero)
 NivelPublico({id}, rango_edad)
 ```
-
+## Produccion
+```
+Directores({id}, nombres)
+Actores({id}, nombres)
+ActoresPelicula(Peliculas.id, Directores.id)
+DirectoresPelicula(Peliculas.id, Directores.id)
+```
 ## Productos
 ```
 Producto({id}, nombre, descripcion, precio_venta)
