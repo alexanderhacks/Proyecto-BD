@@ -74,7 +74,7 @@ UsuarioColaborador({ {Colaboradores.id}, Usuario.id }, TipoColaborador.especiali
 
 ## 1.2.5 Usuario Clientes
 ```
-UsuarioCliente(Cliente.id, Usuario.id, telefono, CuentaBancaria.id) 
+UsuarioCliente(Cliente.id, Usuario.id, telefono) 
 ```
 ## Locales
 ```
