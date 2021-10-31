@@ -64,24 +64,24 @@ Usuario({ {Colaboradores.id}, usuario }, contrasena, TipoColaborador.especialida
 
 ````
 
-## **Locales**
+## Locales
 ```
 Sede({id}, nombre, direccion, departamento, distrito, n_salas)
 ```
 
-## **Peliculas**
+## Peliculas
 ```
 Peliculas({id}, nombre, idioma, fecha_adquisión, fecha_estreno, genero, duracion, resena, NivelPublico.id)
 Genero({id}, nombre_genero)
 NivelPublico({id}, rango_edad)
 ```
 
-## **Productos**
+## Productos
 ```
 Producto({id}, nombre, descripcion, precio_venta)
 Insumo({id}, nombre, cantidad_kg, precio_costo)
 ```
-## **Funciones de pelicula**
+## Funciones de pelicula
 ```
 Sala({id}, Sede.id, numero_sala, n_butcas)
 
@@ -93,7 +93,7 @@ ButacaFuncion(Funcion.id, Funcion.fecha, Funcion.hora, nro_fila, nro_columna, Ve
 
 
 
-## ** Ventas **
+## Ventas
 
 ```
 Venta({id}, Cliente.id, sede.if, fecha, hora}
@@ -105,7 +105,7 @@ VentaEntrada(Venta.id, Venta.Cliente.id ,Funcion.id, cantidad_entradas)
 VProducto(Venta.id, Producto.id, cantidad)
 ```
 
-## ** Vacunados **
+## Vacunados
 
 ```
 ClientesVacunados({Cliente.id}, numero_carnet)
