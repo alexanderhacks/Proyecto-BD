@@ -35,7 +35,7 @@ Socio({Cliente.tipo_dni}, {Cliente.nro_dni}, Membresia.id)
 ### 1.2.2 Colaboradores
 
 ```
-AreaTrabajo({id}, nombre) // Departamentos de la empresa: marketing, finanzas, etc
+AreaTrabajo({id}, nombre)
 
 Colaboradores({{id}, nro_documento, tipo_documento}, nombres, apellidos, celular, correo, cuenta_bancaria, AreaTrabajo.id)
 
@@ -56,10 +56,31 @@ El sistema contará contará con tres tipos de usuarios de trabajador: administr
 **Colaborador principal:** es aquel encargado de administrar las operaciones en cada sede. Además, será el encargado de monitorear la participación de los colaboradores generales.
 
 **Colaborador general:** Es el colaborador que se encarga en la ejecución de su función (seguridad, caja, etc).
-
 ### 1.2.4 Colaboradores
 ```
-Permisos({id}, rango_permisos) // Permisos de acuerdo al tipo de usuario
-Usuario({ {Colaboradores.id}, usuario }, contrasena, Permisos.id) // Credenciales del usuario
+TipoColaborador({ {id}, especialidad, rango_permiso})
+Usuario({ {Colaboradores.id}, usuario }, contrasena, TipoColaborador.especialidad, TipoColaborador.id) 
 
 ````
+
+**Locales**
+```
+Sede({id}, nombre, direccion, departamento, distrito, n_salas)
+```
+
+**Peliculas**
+```
+Peliculas({id}, nombre, idioma, fecha_adquisión, fecha_estreno, genero, duracion, resena, NivelPublico.id)
+Genero({id}, nombre_genero)
+NivelPublico({id}, rango_edad)
+```
+
+**Productos**
+Producto({id}, nombre, precio_venta)
+Insumo({id}, nombre, cantidad_kg, precio_costo)
+
+**Funciones de pelicula**
+Sala({id}, Sede.id, numero_sala, n_butcas)
+Funcion({Sala.id, fecha, hora} , Pelicula.nombre, Pelicula.lenguaje)
+
+ButacaFuncion(Funcion.id, Funcion.fecha, Funcion.hora, nro_fila, nro_columna, VentaEntrada.id)
