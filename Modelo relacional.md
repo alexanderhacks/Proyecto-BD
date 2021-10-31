@@ -62,9 +62,9 @@ El sistema contará contará con tres tipos de usuarios de trabajador: administr
 **Colaborador principal:** es aquel encargado de administrar las operaciones en cada sede. Además, será el encargado de monitorear la participación de los colaboradores generales.
 
 **Colaborador general:** Es el colaborador que se encarga en la ejecución de su función (seguridad, caja, etc).
-
+```
 Usuario({id, usuario}, contraseña)
-
+```
 ### 1.2.4 Usuario Colaboradores
 ```
 TipoColaborador({ {id}, especialidad, rango_permiso})
