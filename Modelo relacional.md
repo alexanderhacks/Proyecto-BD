@@ -30,7 +30,7 @@ CuentaBancaria({numero_cuenta}, Cliente.id, tipo_cuenta) // tipo_cuenta: banco d
 
 Membresia({id}, nombre)
 
-Socio({Cliente.tipo_dni}, {Cliente.nro_dni}, Membresia.id)
+Socio({Cliente.id}, Membresia.id)
 
 ```
 ### 1.2.2 Colaboradores
