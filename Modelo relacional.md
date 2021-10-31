@@ -76,7 +76,7 @@ NivelPublico({id}, rango_edad)
 ```
 
 **Productos**
-Producto({id}, nombre, precio_venta)
+Producto({id}, nombre, descripcion, precio_venta)
 Insumo({id}, nombre, cantidad_kg, precio_costo)
 
 **Funciones de pelicula**
@@ -84,3 +84,14 @@ Sala({id}, Sede.id, numero_sala, n_butcas)
 Funcion({Sala.id, fecha, hora} , Pelicula.nombre, Pelicula.lenguaje)
 
 ButacaFuncion(Funcion.id, Funcion.fecha, Funcion.hora, nro_fila, nro_columna, VentaEntrada.id)
+
+** Ventas **
+Venta({id}, Cliente.id, sede.if, fecha, hora}
+
+VEntrada({VentaEntrada.id}, fila, columna, precio_entrada, tipo_entrada)
+
+VentaEntrada(Venta.id, Venta.Cliente.id ,Funcion.id, cantidad_entradas)
+
+VProducto({Venta.id}, Producto.id, cantidad)
+
+--
