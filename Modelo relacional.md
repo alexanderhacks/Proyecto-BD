@@ -8,7 +8,10 @@ Para una mejor interpretación del modelo relacional se explicará la representa
 4. Tabla: ()
 5. Tabla virtual: !()
 6. Esquema: <Nombre_del_esquema>?
+
 ## Modelo Relacional
+# IMPORTANTE
+Cada departamento tendrá un esquema en propio, de esta manera se diferenciará las consultas y las asignaciones dependiendo del sector de la sede.
 ### 1. Agentes principales
 Los agentes principales son los que tiene un grado de participación en el flujo de información de datos. En ellos se encuetra los siguientes agentes.
 ### 1.1 Descripción de agentes principales
@@ -68,9 +71,20 @@ Usuario({ {Colaboradores.id}, usuario }, contrasena, TipoColaborador.especialida
 ```
 Sede({id}, nombre, direccion, departamento, distrito, n_salas)
 ```
+## Produccion
+```
+Directores({id}, nombres)
+Actores({id}, nombres)
+Produccion({Peliculas.id}, Actores.id, Director.id)
 
+```
+## Actores
+```
+
+```
 ## Peliculas
 ```
+
 Peliculas({id}, nombre, idioma, fecha_adquisión, fecha_estreno, genero, duracion, resena, NivelPublico.id)
 Genero({id}, nombre_genero)
 NivelPublico({id}, rango_edad)
@@ -79,7 +93,6 @@ NivelPublico({id}, rango_edad)
 ## Productos
 ```
 Producto({id}, nombre, descripcion, precio_venta)
-Insumo({id}, nombre, cantidad_kg, precio_costo)
 ```
 ## Funciones de pelicula
 ```
@@ -112,4 +125,3 @@ ClientesVacunados({Cliente.id}, numero_carnet)
 
 FuncionesConVacuna(Funcion.Sala.id, Funcion.fecha, Funcion.hora}
 ```
-
