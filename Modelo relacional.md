@@ -68,7 +68,7 @@ Usuario({id, usuario}, contraseña)
 ### 1.2.4 Usuario Colaboradores
 ```
 TipoColaborador({ {id}, especialidad, rango_permiso})
-UsuarioColaborador({ {Colaboradores.id}, usuario }, contrasena, TipoColaborador.especialidad, TipoColaborador.id) 
+UsuarioColaborador({ {Colaboradores.id}, Usuario.id }, TipoColaborador.especialidad, TipoColaborador.id)
 
 ````
 
