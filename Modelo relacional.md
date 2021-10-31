@@ -26,7 +26,7 @@ Los agentes principales son los que tiene un grado de participación en el flujo
 ```
 Clientes({id}, nombres, apellidos, correo, celular)
 
-TarjetaBancaria({numero_tarjeta}, Cliente.id, tipo_tarjeta)
+CuentaBancaria({numero_cuenta}, Cliente.id, tipo_cuenta) // tipo_cuenta: banco de la cuenta
 
 Membresia({id}, nombre)
 
