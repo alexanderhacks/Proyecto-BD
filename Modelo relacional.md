@@ -35,7 +35,7 @@ Socio({Cliente.tipo_dni}, {Cliente.nro_dni}, Membresia.id)
 ### 1.2.2 Colaboradores
 
 ```
-AreaTrabajo({id}, nombre)
+AreaTrabajo({id}, nombre) // Departamentos de la empresa: marketing, finanzas, etc
 
 Colaboradores({{id}, nro_documento, tipo_documento}, nombres, apellidos, celular, correo, cuenta_bancaria, AreaTrabajo.id)
 
@@ -59,7 +59,7 @@ El sistema contará contará con tres tipos de usuarios de trabajador: administr
 
 ### 1.2.4 Colaboradores
 ```
-TipoColaborador({ {id}, especialidad, rango_permiso})
-Usuario({ {Colaboradores.id}, usuario }, contrasena, TipoColaborador.especialidad, TipoColaborador.id) 
+Permisos({id}, rango_permisos) // Permisos de acuerdo al tipo de usuario
+Usuario({ {Colaboradores.id}, usuario }, contrasena, Permisos.id) // Credenciales del usuario
 
 ````
