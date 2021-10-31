@@ -15,7 +15,7 @@ niveles_publico({id}, rango_edad}
 
 -- Productos
 producto({id}, nombre, precio_venta)
-insumos({id}, nombre, cantidad, precio_costo)
+insumo({id}, nombre, cantidad, precio_costo)
 
 
 -- Funciones de película
@@ -28,7 +28,7 @@ funcion_butacas{funcion.fecha, funcion.hora, sala.numero, sede.direccion, pelicu
 -- Ventas
 venta({cliente.tipo_dni}, {cliente.n_dni}, {sede.id}, {fecha})
 venta_entrada({venta.tipo_dni}, {venta.n_dni}, {venta.id}, {funcion.fecha}, {funcion.hora} {funcion.numero}, {fila_butaca}, {columna_butaca}, cantidad_entradas)
-venta_alimento({venta.tipo_dni}, {venta.n_dni}, {venta.id}, {venta.fecha}, alimento.id)
+venta_insumo({venta.tipo_dni}, {venta.n_dni}, {venta.id}, {venta.fecha}, insumo.id)
 
 
 
