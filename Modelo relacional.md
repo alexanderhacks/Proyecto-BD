@@ -100,7 +100,7 @@ Venta({id}, Cliente.id, sede.if, fecha, hora}
 
 VEntrada({VentaEntrada.id}, fila, columna, precio_entrada, tipo_entrada)
 
-VentaEntrada(Venta.id, Venta.Cliente.id ,Funcion.id, cantidad_entradas)
+VentaEntrada(Venta.id, Venta.Cliente.id ,Funcion.id, cantidad_entradas, qr_id)
 
 VProducto(Venta.id, Producto.id, cantidad)
 ```
