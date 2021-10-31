@@ -49,12 +49,12 @@ SueldoColaborador({Colaboradores.id}, fecha_inicio,fecha_final,sueldo)
 ```
 Administradores({Colaboradores.id}, nivel_permiso)
 ```
-## **Usuarios**
+**Usuarios**
 El sistema contará contará con tres tipos de usuarios de trabajador: administrador, colaborador principal, colaborador general.
 
-## **Administrador:** el administrador principal es aquel que tiene acceso por completo a toda la plataforma. Es quien podrá realizar los cambios tanto en la plataforma con enfoque al cliente como en la plataforma con enfoque al monitoreo de trabajador.
+**Administrador:** el administrador principal es aquel que tiene acceso por completo a toda la plataforma. Es quien podrá realizar los cambios tanto en la plataforma con enfoque al cliente como en la plataforma con enfoque al monitoreo de trabajador.
 
-## **Colaborador principal:** es aquel encargado de administrar las operaciones en cada sede. Además, será el encargado de monitorear la participación de los colaboradores generales.
+**Colaborador principal:** es aquel encargado de administrar las operaciones en cada sede. Además, será el encargado de monitorear la participación de los colaboradores generales.
 
 **Colaborador general:** Es el colaborador que se encarga en la ejecución de su función (seguridad, caja, etc).
 ### 1.2.4 Colaboradores
