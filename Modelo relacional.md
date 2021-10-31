@@ -10,8 +10,10 @@ Para una mejor interpretación del modelo relacional se explicará la representa
 6. Esquema: <Nombre_del_esquema>?
 
 ## Modelo Relacional
-# IMPORTANTE
+```
+IMPORTANTE
 Cada departamento tendrá un esquema en propio, de esta manera se diferenciará las consultas y las asignaciones dependiendo del sector de la sede.
+```
 ### 1. Agentes principales
 Los agentes principales son los que tiene un grado de participación en el flujo de información de datos. En ellos se encuetra los siguientes agentes.
 ### 1.1 Descripción de agentes principales
