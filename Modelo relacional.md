@@ -73,7 +73,9 @@ UsuarioColaborador({ {Colaboradores.id}, usuario }, contrasena, TipoColaborador.
 ````
 
 ## 1.2.5 Usuario Clientes
+```
 UsuarioCliente(Cliente.id, Usuario.id, telefono, CuentaBancaria.id) 
+```
 ## Locales
 ```
 Sede({id}, nombre, direccion, departamento, distrito, n_salas)
