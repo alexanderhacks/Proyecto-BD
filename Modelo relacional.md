@@ -31,6 +31,7 @@ CuentaBancaria({numero_cuenta}, Cliente.id, tipo_cuenta) // tipo_cuenta: banco d
 Membresia({id}, nombre)
 
 Socio({Cliente.tipo_dni}, {Cliente.nro_dni}, Membresia.id)
+
 ```
 ### 1.2.2 Colaboradores
 
@@ -51,9 +52,9 @@ Administradores({Colaboradores.id}, nivel_permiso)
 ## **Usuarios**
 El sistema contará contará con tres tipos de usuarios de trabajador: administrador, colaborador principal, colaborador general.
 
-**Administrador:** el administrador principal es aquel que tiene acceso por completo a toda la plataforma. Es quien podrá realizar los cambios tanto en la plataforma con enfoque al cliente como en la plataforma con enfoque al monitoreo de trabajador.
+## **Administrador:** el administrador principal es aquel que tiene acceso por completo a toda la plataforma. Es quien podrá realizar los cambios tanto en la plataforma con enfoque al cliente como en la plataforma con enfoque al monitoreo de trabajador.
 
-**Colaborador principal:** es aquel encargado de administrar las operaciones en cada sede. Además, será el encargado de monitorear la participación de los colaboradores generales.
+## **Colaborador principal:** es aquel encargado de administrar las operaciones en cada sede. Además, será el encargado de monitorear la participación de los colaboradores generales.
 
 **Colaborador general:** Es el colaborador que se encarga en la ejecución de su función (seguridad, caja, etc).
 ### 1.2.4 Colaboradores
@@ -63,35 +64,52 @@ Usuario({ {Colaboradores.id}, usuario }, contrasena, TipoColaborador.especialida
 
 ````
 
-**Locales**
+## **Locales**
 ```
 Sede({id}, nombre, direccion, departamento, distrito, n_salas)
 ```
 
-**Peliculas**
+## **Peliculas**
 ```
 Peliculas({id}, nombre, idioma, fecha_adquisión, fecha_estreno, genero, duracion, resena, NivelPublico.id)
 Genero({id}, nombre_genero)
 NivelPublico({id}, rango_edad)
 ```
 
-**Productos**
+## **Productos**
+```
 Producto({id}, nombre, descripcion, precio_venta)
 Insumo({id}, nombre, cantidad_kg, precio_costo)
-
-**Funciones de pelicula**
+```
+## **Funciones de pelicula**
+```
 Sala({id}, Sede.id, numero_sala, n_butcas)
+
 Funcion({Sala.id, fecha, hora} , Pelicula.nombre, Pelicula.lenguaje)
 
 ButacaFuncion(Funcion.id, Funcion.fecha, Funcion.hora, nro_fila, nro_columna, VentaEntrada.id)
+```
 
-** Ventas **
+
+
+
+## ** Ventas **
+
+```
 Venta({id}, Cliente.id, sede.if, fecha, hora}
 
 VEntrada({VentaEntrada.id}, fila, columna, precio_entrada, tipo_entrada)
 
 VentaEntrada(Venta.id, Venta.Cliente.id ,Funcion.id, cantidad_entradas)
 
-VProducto({Venta.id}, Producto.id, cantidad)
+VProducto(Venta.id, Producto.id, cantidad)
+```
 
---
+## ** Vacunados **
+
+```
+ClientesVacunados({Cliente.id}, numero_carnet)
+
+FuncionesConVacuna(Funcion.Sala.id, Funcion.fecha, Funcion.hora}
+```
+
