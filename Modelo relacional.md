@@ -43,7 +43,7 @@ Socio({Cliente.id}, Membresia.id)
 ```
 AreaTrabajo({id}, nombre)
 
-Colaboradores({{id}, nro_documento, tipo_documento}, nombres, apellidos, celular, correo, cuenta_bancaria, AreaTrabajo.id)
+Colaboradores({{id}, nro_documento, tipo_documento}, nombres, apellidos, celular, correo, numero_cuenta, AreaTrabajo.id)
 
 SueldoColaborador({Colaboradores.id}, fecha_inicio,fecha_final,sueldo)
 
