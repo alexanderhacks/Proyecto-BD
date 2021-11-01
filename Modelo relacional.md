@@ -92,7 +92,7 @@ NivelPublico({id}, rango_edad)
 ```
 Directores({id}, nombres)
 Actores({id}, nombres)
-ActoresPelicula(Peliculas.id, Directores.id)
+ActoresPelicula(Peliculas.id, Actores.id)
 DirectoresPelicula(Peliculas.id, Directores.id)
 ```
 ## Productos
