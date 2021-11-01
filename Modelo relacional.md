@@ -84,7 +84,7 @@ Sede({id}, nombre, direccion, departamento, distrito, n_salas)
 ## Peliculas
 ```
 
-Peliculas({id}, nombre, idioma, fecha_adquisión, fecha_estreno, genero, duracion, resena, NivelPublico.id)
+Peliculas({id}, nombre, idioma, fecha_adquisión, fecha_estreno, id.genero, duracion, resena, NivelPublico.id)
 Genero({id}, nombre_genero)
 NivelPublico({id}, rango_edad)
 ```
@@ -103,7 +103,7 @@ Producto({id}, nombre, descripcion, precio_venta)
 ```
 Sala({id}, Sede.id, numero_sala, n_butcas)
 
-Funcion({Sala.id, fecha, hora} , Pelicula.nombre, Pelicula.lenguaje)
+Funcion({Sala.id, fecha, hora} , Pelicula.nombre, Pelicula.idioma)
 
 ButacaFuncion(Funcion.id, Funcion.fecha, Funcion.hora, nro_fila, nro_columna, VentaEntrada.id)
 ```
@@ -114,7 +114,7 @@ ButacaFuncion(Funcion.id, Funcion.fecha, Funcion.hora, nro_fila, nro_columna, Ve
 ## Ventas
 
 ```
-Venta({id}, Cliente.id, sede.if, fecha, hora}
+Venta({id}, Cliente.id, sede.id, fecha, hora}
 
 VEntrada({VentaEntrada.id}, fila, columna, precio_entrada, tipo_entrada)
 
