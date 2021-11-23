@@ -84,6 +84,7 @@ https://zetcode.com/python/faker/
 https://faker.readthedocs.io/en/master/providers.html
 https://www.analyticsvidhya.com/blog/2021/09/how-to-create-dummy-data-in-python-using-faker-package/
 https://hackernoon.com/how-to-create-dummy-data-in-python-lpn37x1
+https://kb.objectrocket.com/postgresql/generate-postgres-test-data-with-python-part-2-1253
 
 https://www.a2hosting.com/kb/developer-corner/postgresql/determining-the-size-of-postgresql-databases-and-tables
 SELECT pg_size_pretty( pg_total_relation_size('tablename') );
