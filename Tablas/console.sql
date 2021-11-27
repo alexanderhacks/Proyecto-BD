@@ -33,3 +33,4 @@ CREATE TABLE Nivel_Publico
     id              int,
     nombre          varchar(10),
 );
+
