@@ -1,12 +1,10 @@
+DROP SCHEMA cinemania100 CASCADE;
+CREATE SCHEMA cinemania100;
+SET search_path TO cinemania100;
 SHOW search_path;
-SET search_path TO public;
-DROP SCHEMA public CASCADE;
-CREATE SCHEMA public;
-
-set search_path = "public";
 
 -- CLIENTES
-CREATE TABLE public."Clientes"
+CREATE TABLE "Clientes"
 (
     id        VARCHAR(10) NOT NULL,
     nombres   VARCHAR(50) NOT NULL,
@@ -14,61 +12,71 @@ CREATE TABLE public."Clientes"
     correo    VARCHAR(50),
     celular   VARCHAR(9)
 );
-ALTER TABLE public."Clientes"
+ALTER TABLE "Clientes"
     ADD CONSTRAINT "pk_clientes" PRIMARY KEY (id);
 
 -- CLIENTES VACUNADOS
+CREATE TABLE "ClientesVacunados"
+(
+    cliente_id  VARCHAR(10) NOT NULL,
+    nro_certificado VARCHAR(10) NOT NULL
+);
+ALTER TABLE "ClientesVacunados"
+    ADD CONSTRAINT "pk_clientesvacunados"
+        PRIMARY KEY(cliente_id),
+    ADD CONSTRAINT "fk_clienteid_clientesvacunados"
+        FOREIGN KEY (cliente_id) REFERENCES "Clientes" (id);
 
 -- CUENTA BANCARIA
-CREATE TABLE public."CuentaBancaria"
+CREATE TABLE "CuentaBancaria"
 (
     numero_cuenta VARCHAR(20) NOT NULL,
     cliente_id    VARCHAR(10) NOT NULL,
     tipo_cuenta   VARCHAR(15) NOT NULL
 );
-ALTER TABLE public."CuentaBancaria"
+ALTER TABLE "CuentaBancaria"
     ADD CONSTRAINT "pk_cuentabancaria"
         PRIMARY KEY (numero_cuenta),
     ADD CONSTRAINT "fk_cuentabancaria"
-        FOREIGN KEY (cliente_id) REFERENCES public."Clientes" (id)
+        FOREIGN KEY (cliente_id) REFERENCES "Clientes" (id)
         ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- MEMBRESÍA
-CREATE TABLE public."Membresia"
+CREATE TABLE "Membresia"
 (
     id     VARCHAR(10) NOT NULL,
     nombre VARCHAR(50) NOT NULL
 );
-ALTER TABLE public."Membresia"
+ALTER TABLE "Membresia"
     ADD CONSTRAINT "pk_membresia" PRIMARY KEY (id);
 
 -- SOCIO
-CREATE TABLE public."Socios"
+CREATE TABLE "Socios"
 (
     cliente_id   VARCHAR(10) NOT NULL,
     membresia_id VARCHAR(10) NOT NULL
 );
-ALTER TABLE public."Socios"
+ALTER TABLE "Socios"
     ADD CONSTRAINT "pk_socios"
         PRIMARY KEY (cliente_id),
     ADD CONSTRAINT "fk_membresia_cliente"
-        FOREIGN KEY (membresia_id) REFERENCES public."Membresia" (id)
+        FOREIGN KEY (membresia_id) REFERENCES "Membresia" (id)
             ON DELETE SET NULL ON UPDATE CASCADE,
     ADD CONSTRAINT "fk_cliente_membresia"
-        FOREIGN KEY (cliente_id) REFERENCES public."Clientes" (id)
+        FOREIGN KEY (cliente_id) REFERENCES "Clientes" (id)
             ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AREA TRABAJO
-CREATE TABLE public."AreaTrabajo"
+CREATE TABLE "AreaTrabajo"
 (
     id     VARCHAR(10) NOT NULL,
     nombre VARCHAR(50) NOT NULL
 );
-ALTER TABLE public."AreaTrabajo"
+ALTER TABLE "AreaTrabajo"
     ADD CONSTRAINT "pk_areatrabajo" PRIMARY KEY (id);
 
 -- COLABORADORES
-CREATE TABLE public."Colaboradores"
+CREATE TABLE "Colaboradores"
 (
     id             VARCHAR(10) NOT NULL,
     nro_documento  VARCHAR(8)  NOT NULL,
@@ -80,75 +88,77 @@ CREATE TABLE public."Colaboradores"
     numero_cuenta  VARCHAR(20) NOT NULL,
     areatrabajo_id VARCHAR(10) NOT NULL
 );
-ALTER TABLE public."Colaboradores"
+ALTER TABLE "Colaboradores"
     ADD CONSTRAINT "pk_colaboradores"
         PRIMARY KEY (id),
     ADD CONSTRAINT "fk_colaboradores_trabajo"
-        FOREIGN KEY (areatrabajo_id) REFERENCES public."AreaTrabajo" (id),
+        FOREIGN KEY (areatrabajo_id) REFERENCES "AreaTrabajo" (id),
     ADD CONSTRAINT "fk_colaboradores_cuentabanco"
-       FOREIGN KEY (numero_cuenta) REFERENCES public."CuentaBancaria" (numero_cuenta);
+       FOREIGN KEY (numero_cuenta) REFERENCES "CuentaBancaria" (numero_cuenta);
 
 -- USUARIO
-CREATE TABLE public."Usuario"
+CREATE TABLE "Usuario"
 (
     id           BIGSERIAL   NOT NULL,
     usuario      VARCHAR(15) NOT NULL,
     "contrasena" VARCHAR     NOT NULL
 );
-ALTER TABLE public."Usuario"
+ALTER TABLE "Usuario"
     ADD CONSTRAINT "pk_usuario" PRIMARY KEY (id);
 
 -- SUELDO COLABORADOR
-CREATE TABLE public."SueldoColaborador"
+CREATE TABLE "SueldoColaborador"
 (
     colaborador_id VARCHAR(10) NOT NULL,
     fecha_inicio   DATE        NOT NULL,
     fecha_final    DATE        NOT NULL,
     sueldo         FLOAT8      NOT NULL
-
 );
-ALTER TABLE public."SueldoColaborador"
+ALTER TABLE "SueldoColaborador"
     ADD CONSTRAINT "pk_sueldocolaborador"
         PRIMARY KEY (colaborador_id),
     ADD CONSTRAINT "fk_sueldocolaborador"
-        FOREIGN KEY (colaborador_id) REFERENCES public."Colaboradores" (id);
+        FOREIGN KEY (colaborador_id) REFERENCES "Colaboradores" (id);
 
 -- ADMINISTRADORES
-CREATE TABLE public."Administradores"
+CREATE TABLE "Administradores"
 (
     id            VARCHAR(10) NOT NULL,
     nivel_permiso SMALLINT    NOT NULL
 );
-ALTER TABLE public."Administradores"
+ALTER TABLE "Administradores"
     ADD CONSTRAINT "pk_administradores"
         PRIMARY KEY (id),
     ADD CONSTRAINT "fk_administradores"
-        FOREIGN KEY (id) REFERENCES public."Colaboradores" (id);
-
--- USUARIO ADMINISTRADORES
-CREATE TABLE public."UsuarioAdministrador"
-(
-    administrador_id    VARCHAR(10) NOT NULL,
-    usuario_id          BIGSERIAL   NOT NULL
-);
-ALTER TABLE public."UsuarioAdministrador"
-    ADD CONSTRAINT "fk_administrador_usuarioadmin"
-        FOREIGN KEY (administrador_id) REFERENCES "Administradores"(id),
-    ADD CONSTRAINT "fk_usuario_usuarioadmin"
-        FOREIGN KEY (usuario_id) REFERENCES "Usuario"(id);
+        FOREIGN KEY (id) REFERENCES "Colaboradores" (id);
 
 -- TIPO COLABORADOR
-CREATE TABLE public."TipoColaborador"
+CREATE TABLE "TipoColaborador"
 (
     id            VARCHAR(10) NOT NULL,
     especialidad  VARCHAR(30) NOT NULL,
     rango_permiso int8        NOT NULL
 );
-ALTER TABLE public."TipoColaborador"
+ALTER TABLE "TipoColaborador"
     ADD CONSTRAINT "pk_tipocolaborador" PRIMARY KEY (id);
 
+
+-- USUARIO ADMINISTRADORES
+CREATE TABLE "UsuarioAdministrador"
+(
+    administrador_id    VARCHAR(10) NOT NULL,
+    usuario_id          BIGSERIAL   NOT NULL
+);
+ALTER TABLE "UsuarioAdministrador"
+    ADD CONSTRAINT "pk_usuario_usuarioadmin"
+        PRIMARY KEY (usuario_id),
+    ADD CONSTRAINT "fk_administrador_usuarioadmin"
+        FOREIGN KEY (administrador_id) REFERENCES "Administradores"(id),
+    ADD CONSTRAINT "fk_usuario_usuarioadmin"
+        FOREIGN KEY (usuario_id) REFERENCES "Usuario"(id);
+
 -- USUARIO COLABORADOR
-CREATE TABLE public."UsuarioColaborador"
+CREATE TABLE "UsuarioColaborador"
 (
     id                           VARCHAR(10) not null,
     colaborador_id               VARCHAR(10) NOT NULL,
@@ -156,7 +166,7 @@ CREATE TABLE public."UsuarioColaborador"
     tipocolaborador_id           VARCHAR(10) NOT NULL
 
 );
-ALTER TABLE public."UsuarioColaborador"
+ALTER TABLE "UsuarioColaborador"
     ADD CONSTRAINT "pk_usuariocolaborador"
         PRIMARY KEY (id),
     ADD CONSTRAINT "fk_colaboradorid_usuariocolaborador"
@@ -167,14 +177,16 @@ ALTER TABLE public."UsuarioColaborador"
         FOREIGN KEY (tipocolaborador_id) REFERENCES "TipoColaborador" (id);
 
 -- USUARIO CLIENTE
-CREATE TABLE public."UsuarioCliente"
+CREATE TABLE "UsuarioCliente"
 (
     cliente_id      VARCHAR(10) NOT NULL,
     usuario_id      BIGSERIAL   NOT NULL,
     telefono        VARCHAR(9),
     numero_cuenta   VARCHAR(20) NOT NULL
 );
-ALTER TABLE public."UsuarioCliente"
+ALTER TABLE "UsuarioCliente"
+    ADD CONSTRAINT "pk_usuarioid_usuariocliente"
+        PRIMARY KEY (usuario_id),
     ADD CONSTRAINT "fk_clienteid_usuariocliente"
         FOREIGN KEY (cliente_id) REFERENCES "Clientes" (id),
     ADD CONSTRAINT "fk_usuarioid_usuariocliente"
@@ -183,7 +195,7 @@ ALTER TABLE public."UsuarioCliente"
         FOREIGN KEY (numero_cuenta) REFERENCES "CuentaBancaria" (numero_cuenta);
 
 -- SEDE
-CREATE TABLE public."Sede"
+CREATE TABLE "Sede"
 (
     id           VARCHAR(10) NOT NULL,
     nombre       VARCHAR(50) NOT NULL,
@@ -193,47 +205,47 @@ CREATE TABLE public."Sede"
     n_salas      SMALLINT    NOT NULL
 
 );
-ALTER TABLE public."Sede"
+ALTER TABLE "Sede"
     ADD CONSTRAINT "pl_sede" PRIMARY KEY (id);
 
 -- GENERO
-CREATE TABLE public."Genero"
+CREATE TABLE "Genero"
 (
     id     VARCHAR(10) NOT NULL,
     nombre VARCHAR(15) NOT NULL
 );
-ALTER TABLE public."Genero"
+ALTER TABLE "Genero"
     ADD CONSTRAINT "pk_genero" PRIMARY KEY (id);
 
 -- NIVEL PUBLICO
-CREATE TABLE public."NivelPublico"
+CREATE TABLE "NivelPublico"
 (
     id         VARCHAR(10) NOT NULL,
     rango_edad SMALLINT    NOT NULL
 );
-ALTER TABLE public."NivelPublico"
+ALTER TABLE "NivelPublico"
     ADD CONSTRAINT "pk_nivelpublico" PRIMARY KEY (id);
 
 -- ACTORES
-CREATE TABLE public."Actores"
+CREATE TABLE "Actores"
 (
     id     VARCHAR(10) NOT NULL,
     nombre VARCHAR(50) NOT NULL
 );
-ALTER TABLE public."Actores"
+ALTER TABLE "Actores"
     ADD CONSTRAINT "pk_actores" PRIMARY KEY (id);
 
 -- DIRECTORES
-CREATE TABLE public."Directores"
+CREATE TABLE "Directores"
 (
     id     VARCHAR(10) NOT NULL,
     nombre VARCHAR(50) NOT NULL
 );
-ALTER TABLE public."Directores"
+ALTER TABLE "Directores"
     ADD CONSTRAINT "pk_directores" PRIMARY KEY (id);
 
 -- PELICULAS
-CREATE TABLE public."Peliculas"
+CREATE TABLE "Peliculas"
 (
     id              VARCHAR(10)  NOT NULL,
     nombre          VARCHAR(50)  NOT NULL,
@@ -246,7 +258,7 @@ CREATE TABLE public."Peliculas"
     nivelpublico_id VARCHAR(10)  NOT NULL,
     id_directores VARCHAR(10)
 );
-ALTER TABLE public."Peliculas"
+ALTER TABLE "Peliculas"
     ADD CONSTRAINT "pk_peliculas"
         PRIMARY KEY (id),
     ADD CONSTRAINT "fk_generoid_peliculas"
@@ -257,21 +269,21 @@ ALTER TABLE public."Peliculas"
         FOREIGN KEY (id_Directores) REFERENCES "Directores" (id);
 
 -- SALA
-CREATE TABLE public."Sala"
+CREATE TABLE "Sala"
 (
     id           VARCHAR(10) NOT NULL,
     sede_id      VARCHAR(10) NOT NULL,
     numero_salas SMALLINT    NOT NULL,
     n_butacas    SMALLINT    NOT NULL
 );
-ALTER TABLE public."Sala"
+ALTER TABLE "Sala"
     ADD CONSTRAINT "pk_sala"
         PRIMARY KEY (id),
     ADD CONSTRAINT "fk_sedeid_sala"
-        FOREIGN KEY (sede_id) REFERENCES public."Sede" (id);
+        FOREIGN KEY (sede_id) REFERENCES "Sede" (id);
 
 -- FUNCION
-CREATE TABLE public."Funcion"
+CREATE TABLE "Funcion"
 (
     funcion_id  VARCHAR(10) NOT NULL,
     sala_id     VARCHAR(10) NOT NULL,
@@ -279,7 +291,7 @@ CREATE TABLE public."Funcion"
     hora        TIMESTAMP   NOT NULL,
     pelicula_id VARCHAR(10) NOT NULL
 );
-ALTER TABLE public."Funcion"
+ALTER TABLE "Funcion"
     ADD CONSTRAINT "pk_funcion"
         PRIMARY KEY (funcion_id),
     ADD CONSTRAINT "fk_salaid_funcion"
@@ -288,18 +300,18 @@ ALTER TABLE public."Funcion"
         FOREIGN KEY (pelicula_id) REFERENCES "Peliculas" (id);
 
 -- FUNCION CON VACUNA
-CREATE TABLE public."FuncionVacuna"
+CREATE TABLE "FuncionVacuna"
 (
     funcion_id VARCHAR(10) NOT NULL
 );
-ALTER TABLE public."FuncionVacuna"
+ALTER TABLE "FuncionVacuna"
     ADD CONSTRAINT "pk_funcionvacuna"
         PRIMARY KEY (funcion_id),
     ADD CONSTRAINT "fk_funcionvacuna"
         FOREIGN KEY (funcion_id) REFERENCES "Funcion"(funcion_id);
 
 -- PRODUCTO
-CREATE TABLE public."Producto"
+CREATE TABLE "Producto"
 (
     id           VARCHAR(10) NOT NULL,
     nombre       VARCHAR(50) NOT NULL,
@@ -310,7 +322,7 @@ ALTER TABLE "Producto"
     ADD CONSTRAINT "pk_producto" PRIMARY KEY (id);
 
 -- VENTAS
-CREATE TABLE public."Venta"
+CREATE TABLE "Venta"
 (
     id         VARCHAR(10) NOT NULL,
     cliente_id VARCHAR(10) NOT NULL,
@@ -327,7 +339,7 @@ ALTER TABLE "Venta"
         FOREIGN KEY (colaborador_id) REFERENCES "Colaboradores" (id);
 
 -- VENTA ENTRADA
-CREATE TABLE public."VentaEntrada"
+CREATE TABLE "VentaEntrada"
 (
     id     VARCHAR(10) not null,
     venta_id       VARCHAR(10) NOT NULL,
@@ -336,45 +348,51 @@ CREATE TABLE public."VentaEntrada"
     precio_entrada FLOAT       NOT NULL,
     tipo_entrada   VARCHAR(10) NOT NULL
 );
-ALTER TABLE public."VentaEntrada"
+ALTER TABLE "VentaEntrada"
     ADD CONSTRAINT "pk_ventaentrada"
         PRIMARY KEY (id),
     ADD CONSTRAINT "fk_ventaid_ventaentrada"
         FOREIGN KEY (venta_id) REFERENCES "Venta" (id);
 
 -- FACTURA ENTRADA
-CREATE TABLE public."FacturaEntrada"
+CREATE TABLE "FacturaEntrada"
 (
     id               VARCHAR(10) NOT NULL,
-    venta_id VARCHAR(10) NOT NULL,
+    venta_id         VARCHAR(10) NOT NULL,
     funcion_id       VARCHAR(10),
+    cliente_id       VARCHAR(10) NOT NULL,
     cantidad_entadas SMALLINT    NOT NULL,
     qr_id            VARCHAR(50) NOT NULL
 );
-ALTER TABLE public."FacturaEntrada"
+ALTER TABLE "FacturaEntrada"
     ADD CONSTRAINT "pk_facturaventa"
         PRIMARY KEY (id),
     ADD CONSTRAINT "fk_funcionid_facturaentrada"
         FOREIGN KEY (funcion_id) REFERENCES "Funcion" (funcion_id),
     ADD CONSTRAINT "fk_ventacliente_facturaentrada"
-        FOREIGN KEY (venta_id) REFERENCES "Venta" (id);
+        FOREIGN KEY (venta_id) REFERENCES "Venta" (id),
+    ADD CONSTRAINT "fk_clienteid_facturaentrada"
+        FOREIGN KEY (cliente_id) REFERENCES "Clientes" (id);
 
 -- VENTA PRODUCTO
-CREATE TABLE public."VentaProducto"
-(
+CREATE TABLE "VentaProducto"
+(   -- agregar id
     venta_id    VARCHAR(10) NOT NULL,
     producto_id VARCHAR(10) NOT NULL,
     cantidad    SMALLINT    NOT NULL
 );
 ALTER TABLE "VentaProducto"
+    ADD CONSTRAINT "pk_ventaproducto"
+        PRIMARY KEY (venta_id, producto_id),
     ADD CONSTRAINT "fk_ventaid_ventaproducto"
         FOREIGN KEY (venta_id) REFERENCES "Venta" (id),
     ADD CONSTRAINT "fk_productoid_ventaproducto"
         FOREIGN KEY (producto_id) REFERENCES "Producto" (id);
 
 -- BUTACA FUNCION
-CREATE TABLE public."ButacaFuncion"
+CREATE TABLE "ButacaFuncion"
 (
+    butaca_id       VARCHAR(10) NOT NULL,
     funcion_id      VARCHAR(10) NOT NULL,
     nro_fila        SMALLINT    NOT NULL,
     nro_columna     SMALLINT    NOT NULL,
@@ -382,13 +400,15 @@ CREATE TABLE public."ButacaFuncion"
 
 );
 ALTER TABLE "ButacaFuncion"
+    ADD CONSTRAINT "butacafuncion_id"
+        PRIMARY KEY (butaca_id),
     ADD CONSTRAINT "fk_funcion_butacafuncion"
         FOREIGN KEY (funcion_id) REFERENCES "Funcion" (funcion_id),
     ADD CONSTRAINT "fk_ventaentrada_id"
         FOREIGN KEY (ventaentrada_id) REFERENCES "VentaEntrada" (id);
 
 -- ACTUA
-CREATE TABLE public."Actua"
+CREATE TABLE "Actua"
 (
     pelicula_id VARCHAR(10),
     actor_id    VARCHAR(10)
@@ -400,3 +420,6 @@ ALTER TABLE "Actua"
         REFERENCES "Peliculas" (id),
     ADD CONSTRAINT "fk_actor_actua" FOREIGN KEY (actor_id)
         REFERENCES "Actores" (id);
+
+
+
