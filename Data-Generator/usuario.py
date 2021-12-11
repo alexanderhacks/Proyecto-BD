@@ -1,7 +1,6 @@
 import pandas as pd
 from IPython.display import display
 from collections import defaultdict
-import random
 from faker import Faker
 
 select_data = defaultdict(list)
@@ -43,8 +42,6 @@ for _ in range(len(adm["id"])):
     select_data["password"].append(fake.password())
     i += 1
     j += 1
-
-
 
 df_select_data = pd.DataFrame(select_data)
 df_select_data.to_csv('usuario.csv', index=False)
