@@ -326,7 +326,7 @@ CREATE TABLE "Venta"
     cliente_id VARCHAR(10) NOT NULL,
     colaborador_id  VARCHAR(10) NOT NULL,
     fecha      DATE        NOT NULL,
-    hora       TIMESTAMP   NOT NULL
+    hora       TIME   NOT NULL
 );
 ALTER TABLE "Venta"
     ADD CONSTRAINT "pk_venta"
@@ -341,7 +341,7 @@ CREATE TABLE "VentaEntrada"
 (
     id     VARCHAR(10) not null,
     venta_id       VARCHAR(10) NOT NULL,
-    fila           SMALLINT    NOT NULL,
+    fila           VARCHAR(1)    NOT NULL,
     columna        SMALLINT    NOT NULL,
     precio_entrada FLOAT       NOT NULL,
     tipo_entrada   VARCHAR(10) NOT NULL
@@ -377,7 +377,8 @@ CREATE TABLE "VentaProducto"
 (   -- agregar id
     venta_id    VARCHAR(10) NOT NULL,
     producto_id VARCHAR(10) NOT NULL,
-    cantidad    SMALLINT    NOT NULL
+    cantidad    SMALLINT    NOT NULL,
+    precio      SMALLINT    NOT NULL
 );
 ALTER TABLE "VentaProducto"
     ADD CONSTRAINT "pk_ventaproducto"
@@ -546,3 +547,18 @@ TRUNCATE "UsuarioColaborador" CASCADE;
 COPY "UsuarioColaborador" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\usuarioColaborador.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "UsuarioColaborador";
+
+TRUNCATE "Venta" CASCADE;
+COPY "Venta" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\venta.csv'
+    DELIMITER ',' CSV HEADER;
+SELECT * FROM "Venta";
+
+TRUNCATE "VentaEntrada" CASCADE;
+COPY "VentaEntrada" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\ventaEntrada.csv'
+    DELIMITER ',' CSV HEADER;
+SELECT * FROM "VentaEntrada";
+
+TRUNCATE "VentaProducto" CASCADE;
+COPY "VentaProducto" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\VentaProducto.csv'
+    DELIMITER ',' CSV HEADER;
+SELECT * FROM "VentaProducto";
