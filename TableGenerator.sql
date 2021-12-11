@@ -107,6 +107,7 @@ ALTER TABLE "Usuario"
 -- SUELDO COLABORADOR
 CREATE TABLE "SueldoColaborador"
 (
+    id             VARCHAR(10) NOT NULL,
     colaborador_id VARCHAR(10) NOT NULL,
     fecha_inicio   DATE        NOT NULL,
     fecha_final    DATE        NOT NULL,
@@ -114,7 +115,7 @@ CREATE TABLE "SueldoColaborador"
 );
 ALTER TABLE "SueldoColaborador"
     ADD CONSTRAINT "pk_sueldocolaborador"
-        PRIMARY KEY (colaborador_id),
+        PRIMARY KEY (id),
     ADD CONSTRAINT "fk_sueldocolaborador"
         FOREIGN KEY (colaborador_id) REFERENCES "Colaboradores" (id);
 
@@ -144,8 +145,8 @@ ALTER TABLE "TipoColaborador"
 -- USUARIO ADMINISTRADORES
 CREATE TABLE "UsuarioAdministrador"
 (
-    administrador_id    VARCHAR(10) NOT NULL,
-    usuario_id          VARCHAR(10)   NOT NULL
+    usuario_id          VARCHAR(10) NOT NULL,
+    administrador_id    VARCHAR(10) NOT NULL
 );
 ALTER TABLE "UsuarioAdministrador"
     ADD CONSTRAINT "pk_usuario_usuarioadmin"
@@ -177,8 +178,8 @@ ALTER TABLE "UsuarioColaborador"
 -- USUARIO CLIENTE
 CREATE TABLE "UsuarioCliente"
 (
-    cliente_id      VARCHAR(10) NOT NULL,
     usuario_id      VARCHAR(10)   NOT NULL,
+    cliente_id      VARCHAR(10) NOT NULL,
     telefono        VARCHAR(9),
     numero_cuenta   VARCHAR(20) NOT NULL
 );
@@ -521,6 +522,27 @@ COPY "Usuario" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\usuario.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Usuario";
 
+TRUNCATE "SueldoColaborador" CASCADE;
+COPY "SueldoColaborador" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\sueldoColaborador.csv'
+    DELIMITER ',' CSV HEADER;
+SELECT * FROM "SueldoColaborador";
 
+TRUNCATE "UsuarioAdministrador" CASCADE;
+COPY "UsuarioAdministrador" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\usuarioAdministrador.csv'
+    DELIMITER ',' CSV HEADER;
+SELECT * FROM "UsuarioAdministrador";
 
+TRUNCATE "UsuarioCliente" CASCADE;
+COPY "UsuarioCliente" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\usuarioCliente.csv'
+    DELIMITER ',' CSV HEADER;
+SELECT * FROM "UsuarioCliente";
 
+TRUNCATE "TipoColaborador" CASCADE;
+COPY "TipoColaborador" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\tipoColaborador.csv'
+    DELIMITER ',' CSV HEADER;
+SELECT * FROM "TipoColaborador";
+
+TRUNCATE "UsuarioColaborador" CASCADE;
+COPY "UsuarioColaborador" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\usuarioColaborador.csv'
+    DELIMITER ',' CSV HEADER;
+SELECT * FROM "UsuarioColaborador";
