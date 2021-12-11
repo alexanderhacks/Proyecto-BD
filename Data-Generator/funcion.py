@@ -3,7 +3,6 @@ from faker import Faker
 from IPython.display import display
 from collections import defaultdict
 import random
-import numpy as np
 from datetime import datetime
 
 fake = Faker()
@@ -31,6 +30,7 @@ for i in range(tuples):
 
 df_select_data = pd.DataFrame(select_data)
 df_select_data.to_csv('funcion.csv', index=False)
+df_select_data.drop_duplicates(keep='first', inplace=True)
 display(df_select_data)
 
 """
