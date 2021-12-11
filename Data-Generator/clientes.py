@@ -17,10 +17,11 @@ for _ in range(tuples):     # alterar lineas para las diversas columnas de la BD
     name = fake.first_name(); lastname = fake.last_name()
     fake_data['nombres'].append(name)
     fake_data['apellidos'].append(lastname)
-    fake_data['correo'].append(name.lower() + "_" + lastname.lower() + email_domain[random.randint(0, 3)])
+    fake_data['correo'].append((name.lower() + "_" + lastname.lower() + email_domain[random.randint(0, 3)])[0:49])
     fake_data['celular'].append(fake.msisdn()[0:8])
     i += 1
 
 df_fake_data = pd.DataFrame(fake_data)
-df_fake_data.to_csv('clientes.csv', index = False)
+df_fake_data.drop_duplicates(keep='first', inplace=True)
+df_fake_data.to_csv('clientes.csv', index=False)
 display(df_fake_data)

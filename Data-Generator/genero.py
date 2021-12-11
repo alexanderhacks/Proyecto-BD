@@ -13,5 +13,6 @@ for a in genero:
 
 
 df_select_data = pd.DataFrame(select_data)
+df_select_data.drop_duplicates(keep='first', inplace=True)
 df_select_data.to_csv('genero.csv', index=False)
 display(df_select_data)

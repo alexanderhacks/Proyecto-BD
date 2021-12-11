@@ -17,5 +17,6 @@ for i in range(tuples):
 
 
 df_select_data = pd.DataFrame(select_data)
+df_select_data.drop_duplicates(keep='first', inplace=True)
 df_select_data.to_csv('directores.csv', index = False)
 display(df_select_data)

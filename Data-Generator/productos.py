@@ -26,5 +26,6 @@ for _ in range(tuples):
     idx += 1
 
 df_fake_data = pd.DataFrame(fake_data)
+df_fake_data.drop_duplicates(keep='first', inplace=True)
 df_fake_data.to_csv('productos.csv', index = False)
 display(df_fake_data)

@@ -4,6 +4,7 @@ from IPython.display import display
 from collections import defaultdict
 import random
 import numpy as np
+import datetime
 
 fake = Faker()
 select_data = defaultdict(list)
@@ -22,8 +23,12 @@ for i in range(tuples):
     select_data['id'].append("MOV" + "0" * (6 - len(str(i + 1))) + str(i + 1))
     select_data['nombre'].append(peliculas[i])
     select_data['idioma'].append(fake.bank_country())
-    select_data['fecha_adquisicion'].append(fake.date_between(start_date='-15d', end_date='today'))
-    select_data['fecha_estreno'].append(fake.date_between(start_date='today', end_date='+25d'))
+
+    adq = fake.date_between(start_date='-340d', end_date='today')
+    emi = fake.date_between(start_date=adq, end_date=adq+datetime.timedelta(days=30))
+    select_data['fecha_adquisicion'].append(adq)
+    select_data['fecha_estreno'].append(emi)
+
     select_data['genero_id'].append(gen[random.randint(0, len(gen) - 1)])
     select_data['duracion_h'].append(duracion[random.randint(0, len(duracion) - 1)])
     select_data['resena'].append(fake.paragraph(nb_sentences=1)[:99])
@@ -31,6 +36,7 @@ for i in range(tuples):
     select_data['id_directores'].append(dir[random.randint(0, len(dir) - 1)])
 
 df_select_data = pd.DataFrame(select_data)
+df_select_data.drop_duplicates(keep='first', inplace=True)
 df_select_data.to_csv('peliculas.csv', index=False)
 display(df_select_data)
 

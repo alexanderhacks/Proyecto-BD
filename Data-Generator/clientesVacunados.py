@@ -21,5 +21,6 @@ for i in idx_list:     # alterar lineas para las diversas columnas de la BD
 
 
 df_select_data = pd.DataFrame(select_data)
-df_select_data.to_csv('clientesVacunados.csv', index = False)
+df_select_data.drop_duplicates(keep='first', inplace=True)
+df_select_data.to_csv('clientesVacunados.csv', index=False)
 display(df_select_data)

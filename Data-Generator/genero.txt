@@ -1,25 +1,25 @@
-Cine adolescente
-Cine comunista
-Cine arte
-Cine infantil
-Cine bélico
-Cine de gánsteres
-Cine catástrofe
-Cine costumbrista
-Cine cristiano
-Cine de acción
-Cine de animación
-Cine de artes marciales
-Cine de autor
-Cine de aventuras
-Cine de ciencia ficción
-Cine de misterio
-Cine de samuráis
-Cine de terror
-Cine documental
-Cine de explotación
-Cine épico
-Cine experimental
-Cine fantástico
-Cine histórico
-Cine musical
+adolescente
+comunista
+arte
+infantil
+bélico
+de gánsteres
+catástrofe
+costumbrista
+cristiano
+de acción
+de animación
+de artes marciales
+de autor
+de aventuras
+de ciencia ficción
+de misterio
+de samuráis
+de terror
+documental
+de explotación
+épico
+experimental
+fantástico
+histórico
+musical

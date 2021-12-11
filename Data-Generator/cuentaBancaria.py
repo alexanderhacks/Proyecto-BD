@@ -18,5 +18,6 @@ for _ in range(tuples):
     fake_data['tipo_cuenta'].append(tipos_cuenta[random.randint(0, 4)])
 
 df_fake_data = pd.DataFrame(fake_data)
+df_fake_data.drop_duplicates(keep='first', inplace=True)
 df_fake_data.to_csv('cuentaBancaria.csv', index = False)
 display(df_fake_data)
