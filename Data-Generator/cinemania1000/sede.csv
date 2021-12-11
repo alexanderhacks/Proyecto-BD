@@ -1,0 +1,101 @@
+id,nombre,direccion,departamento,distrito,n_salas
+S00000001,Cinemania Ridges 1,66290 Richard Port Apt. 303,Kristenshire,David Light,8
+S00000002,Cinemania Mountains 2,6667 Johnson Branch Apt. 346,South Billybury,Matthew Plaza,5
+S00000003,Cinemania Spring 3,6575 Mitchell Ville Suite 834,New Kayleeport,Bethany Village,10
+S00000004,Cinemania Stravenue 4,8709 Ray Stravenue Suite 248,Annfurt,Chaney Light,8
+S00000005,Cinemania Parkway 5,64932 Graves Key Suite 738,Lake Biancaview,Moreno Square,10
+S00000006,Cinemania Gateway 6,2579 Brett Loaf Apt. 499,West Michael,Laura Stream,10
+S00000007,Cinemania Light 7,64801 Wright Crest Suite 320,Lewisview,Connie Ridges,8
+S00000008,Cinemania Harbors 8,647 Rodney Prairie,North Christina,Robertson Freeway,5
+S00000009,Cinemania Estate 9,7577 Hancock Forges Suite 060,Paulaburgh,Russell Centers,10
+S00000010,Cinemania Courts 10,894 Sexton Mission,East Tyler,Mills Ways,8
+S00000011,Cinemania Turnpike 11,2677 Matthews Forge,Caldwellstad,Davis Villages,5
+S00000012,Cinemania Ramp 12,540 Lee River,East Michelle,Gonzalez Spur,8
+S00000013,Cinemania Pines 13,90549 Sylvia Groves,South Jayhaven,Kylie Ville,5
+S00000014,Cinemania Mountains 14,94936 Clayton Lake,East Micheleton,Emma Points,10
+S00000015,Cinemania Causeway 15,384 Melissa Mountain,Masonberg,Moore Spring,8
+S00000016,Cinemania Plains 16,901 Sanchez Ridges Suite 749,Allisonland,Daniel Ways,5
+S00000017,Cinemania Centers 17,2134 Bush Harbor,West Amandachester,Williamson Pass,5
+S00000018,Cinemania Ridge 18,68352 Megan View Apt. 523,Michaelview,Martin Camp,10
+S00000019,Cinemania Landing 19,922 Evans Circles Apt. 532,East Lauraburgh,Charles Park,10
+S00000020,Cinemania Harbor 20,36528 Nathan Row,Hansenville,Webb Bypass,5
+S00000021,Cinemania Lodge 21,508 Alexandria Rue Apt. 504,Lake Jennifer,Linda Fords,8
+S00000022,Cinemania Freeway 22,43784 Griffin Locks Apt. 894,Jesusbury,Butler Path,10
+S00000023,Cinemania Walks 23,9986 Rachael Circles,Lake Timothy,Kaitlyn Knolls,8
+S00000024,Cinemania Lights 24,9323 Anthony Viaduct,East Brianbury,Wright Spring,5
+S00000025,Cinemania Fork 25,636 Rodriguez Court Apt. 958,South Justinburgh,Melissa Ferry,5
+S00000026,Cinemania Shoal 26,453 Weber Mall,Gomezside,Davis Common,5
+S00000027,Cinemania Curve 27,2923 Sweeney Stream Suite 121,New Adammouth,Sheri Dale,10
+S00000028,Cinemania Falls 28,7557 Wagner Islands Suite 987,Port Carolynborough,Zimmerman Road,5
+S00000029,Cinemania Lane 29,3093 Barnett Cliffs Suite 706,Jennifershire,Edwards Court,10
+S00000030,Cinemania Lodge 30,36629 Torres Estates Apt. 917,Port John,Miller Glens,8
+S00000031,Cinemania Ford 31,1098 Mathew Shores Apt. 490,Hooverton,Tonya Rest,8
+S00000032,Cinemania Groves 32,1198 Brewer Loaf,Stokesberg,April Corners,8
+S00000033,Cinemania Court 33,0932 Gomez Glens,Lake Mariashire,Smith Crest,5
+S00000034,Cinemania Courts 34,218 Lori Hollow Apt. 451,Melissaborough,House Turnpike,8
+S00000035,Cinemania Points 35,896 Williams Spur Apt. 886,Lake Sethview,Henry Plaza,5
+S00000036,Cinemania Vista 36,0825 Chaney Branch Apt. 294,Port Rodneybury,Kelly Way,10
+S00000037,Cinemania Brook 37,45378 Howe Dale,Powellton,Shepard Lake,10
+S00000038,Cinemania Plaza 38,108 White Rest,Webbstad,Tyler Land,5
+S00000039,Cinemania Drive 39,776 Paula Parkways Suite 443,Susanside,Mercedes Valley,8
+S00000040,Cinemania Roads 40,3427 Brown Plain Suite 985,Juliabury,Miller Oval,10
+S00000041,Cinemania Forest 41,55806 Robert Rest,North Jocelynhaven,Seth Lakes,5
+S00000042,Cinemania Rest 42,4610 Jesse Unions,Raymondfort,Collier Lock,8
+S00000043,Cinemania Junctions 43,06091 Hector Mews Suite 542,Sellersville,Brianna Corner,10
+S00000044,Cinemania Lake 44,9846 Ross Mews Apt. 965,Simmonstown,Timothy Radial,8
+S00000045,Cinemania Parkways 45,34595 Ashley Garden Suite 341,Sarahville,Pierce Brook,10
+S00000046,Cinemania Shores 46,9943 Sharon Lodge Suite 342,Yolandaburgh,Ramirez Green,8
+S00000047,Cinemania Spur 47,947 Sims Plains Suite 950,Wendymouth,Miller Turnpike,10
+S00000048,Cinemania Lights 48,9358 Tiffany Estate,Port Mackenzieview,Castaneda Spurs,8
+S00000049,Cinemania Centers 49,5955 Potter Ridge,North David,Chris Estate,5
+S00000050,Cinemania Cape 50,102 Daniel Street,West Robertmouth,Linda Gardens,8
+S00000051,Cinemania Run 51,9599 Troy Ford,Connermouth,Erica Trafficway,8
+S00000052,Cinemania Valley 52,545 Kenneth Dam Apt. 243,Nicolechester,Baker Drive,10
+S00000053,Cinemania Viaduct 53,68931 Jenkins Landing Apt. 207,Christineberg,Melton Plains,5
+S00000054,Cinemania Valley 54,4466 Lam Mountain Apt. 124,Welchland,Jeremiah Ville,10
+S00000055,Cinemania Union 55,7671 Meadows Lodge,North Carol,Campbell Plains,8
+S00000056,Cinemania Ridges 56,78192 Stephens Parkway Apt. 619,Deannatown,Johnson Bridge,8
+S00000057,Cinemania Lodge 57,950 Olson Extension,East Joanneview,Teresa Isle,10
+S00000058,Cinemania Manor 58,264 Megan Row Suite 087,New Christopher,Martinez Rue,10
+S00000059,Cinemania Stream 59,5015 Amanda Park,Claystad,Julie Street,5
+S00000060,Cinemania Parks 60,931 Hughes Freeway Suite 382,Jenniferland,Jacobs Path,8
+S00000061,Cinemania Island 61,355 Pamela Forges Apt. 390,East Morgan,Summers Mountain,5
+S00000062,Cinemania Mountains 62,0230 Newton Harbors Suite 356,Nicholefort,Shields Village,10
+S00000063,Cinemania Burg 63,7500 Stephen Pine Suite 724,Michaelton,Moore Stream,8
+S00000064,Cinemania Lights 64,613 Martin Stravenue,West Brenda,Cooke Inlet,10
+S00000065,Cinemania Club 65,343 Rush Path,Port Davidton,Ortega Green,10
+S00000066,Cinemania Spring 66,4508 Miller Ville,Blevinsport,Rivera Dale,8
+S00000067,Cinemania Mall 67,02310 Mccarthy Trail Apt. 668,Jasonview,Hicks Port,8
+S00000068,Cinemania Wells 68,8380 Marquez Streets Apt. 251,Lake Johnfurt,Lee Shoal,10
+S00000069,Cinemania Green 69,96678 Hall Isle Apt. 131,West Sarahhaven,Maldonado Centers,10
+S00000070,Cinemania Corner 70,4795 Nathaniel Glen Suite 288,Jessicaborough,Hoover Club,5
+S00000071,Cinemania Landing 71,9622 Jacqueline Parks Suite 717,West Rachel,Taylor Landing,10
+S00000072,Cinemania Drive 72,18201 Kane Islands,Michellemouth,Alvarez Park,5
+S00000073,Cinemania Common 73,806 Dean Courts,Stephaniemouth,Rice Dale,10
+S00000074,Cinemania Ways 74,4915 Harris Islands,Travisshire,Daniels Dale,5
+S00000075,Cinemania Mill 75,255 Johnson Port Apt. 049,North Stephenborough,Timothy Estate,8
+S00000076,Cinemania Circle 76,196 James Keys Suite 661,West Taylor,Benjamin Forks,10
+S00000077,Cinemania Vista 77,979 Renee Glens Suite 580,Dianefort,Lopez Squares,8
+S00000078,Cinemania Ranch 78,397 Villanueva Way Suite 349,Michaelmouth,Carter Light,5
+S00000079,Cinemania Wells 79,1364 Joseph Court Apt. 908,Nicholsland,Hall Glen,8
+S00000080,Cinemania Crossroad 80,353 Dylan Cove Suite 280,North Lesliemouth,Margaret Junction,8
+S00000081,Cinemania Well 81,0513 Carpenter Shoals,Jesseville,White Springs,8
+S00000082,Cinemania Ports 82,356 Dixon Junctions Apt. 911,Craighaven,Aaron Falls,10
+S00000083,Cinemania Turnpike 83,08294 Robert Roads,South Frank,Aimee Shoal,5
+S00000084,Cinemania Ferry 84,685 Maureen Lakes Suite 985,Martinview,Theresa Street,10
+S00000085,Cinemania Via 85,54576 Roman Radial,North Frederickton,Jennifer Mews,5
+S00000086,Cinemania Cape 86,16413 Forbes Rue Apt. 123,Bradleyport,Brown Ferry,5
+S00000087,Cinemania Inlet 87,9322 Mitchell Dale Suite 662,Lake Susanmouth,Bray Dale,5
+S00000088,Cinemania Glen 88,5640 Elizabeth Lake,Harringtonside,Montgomery Villages,10
+S00000089,Cinemania Vista 89,2395 Elizabeth Ford Suite 041,Lake Yvonne,Spencer Dam,8
+S00000090,Cinemania Neck 90,1375 Martin Drive Apt. 466,West Danielborough,Garcia Motorway,10
+S00000091,Cinemania Field 91,07297 Maria Lodge,Mooreshire,Weber Oval,8
+S00000092,Cinemania Throughway 92,4607 Melissa Inlet,Danielleborough,Burns Shoals,8
+S00000093,Cinemania Junctions 93,820 Amy Turnpike Suite 664,Josephstad,Smith Highway,10
+S00000094,Cinemania Isle 94,765 Blair Bypass,Heidimouth,Riggs Via,10
+S00000095,Cinemania Run 95,2538 Ruben Lake,Lambertshire,John Falls,10
+S00000096,Cinemania Courts 96,4291 Wells Creek Apt. 121,Port Daniel,Mack Branch,10
+S00000097,Cinemania Way 97,1123 Timothy Vista Apt. 291,Adamfort,Gill Fords,8
+S00000098,Cinemania Fords 98,8900 Donald Turnpike,North Michaelfort,Johnson Oval,8
+S00000099,Cinemania Lane 99,002 Margaret Mill,West Erinmouth,Nathaniel Centers,5
+S00000100,Cinemania Fort 100,474 George Junction Apt. 909,West Davidbury,Levi Brook,10
