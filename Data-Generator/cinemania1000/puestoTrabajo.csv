@@ -1,101 +1,101 @@
 id,nombre
-PT0000001,Marine scientist
-PT0000002,Hospital pharmacist
-PT0000003,Public relations account executive
-PT0000004,Adult guidance worker
-PT0000005,Careers adviser
-PT0000006,"Investment banker, corporate"
-PT0000007,"Surveyor, mining"
-PT0000008,"Engineer, control and instrumentation"
-PT0000009,Hydrogeologist
-PT0000010,Chartered certified accountant
-PT0000011,Freight forwarder
-PT0000012,Energy engineer
-PT0000013,Lobbyist
-PT0000014,Chief Executive Officer
-PT0000015,Set designer
-PT0000016,Financial planner
-PT0000017,Computer games developer
-PT0000018,Charity fundraiser
-PT0000019,Contracting civil engineer
-PT0000020,Medical sales representative
-PT0000021,Fine artist
-PT0000022,Colour technologist
-PT0000023,"Engineer, site"
-PT0000024,Theatre director
-PT0000025,Maintenance engineer
-PT0000026,"Engineer, production"
-PT0000027,"Investment banker, corporate"
-PT0000028,Contractor
-PT0000029,Actuary
-PT0000030,Dietitian
-PT0000031,"Nurse, learning disability"
-PT0000032,Forensic psychologist
-PT0000033,"Surveyor, mining"
-PT0000034,Geophysical data processor
-PT0000035,Energy manager
-PT0000036,"Designer, ceramics/pottery"
-PT0000037,"Surveyor, building control"
-PT0000038,"Psychologist, educational"
-PT0000039,Production engineer
-PT0000040,Press sub
-PT0000041,Sales executive
-PT0000042,Fashion designer
-PT0000043,Financial manager
-PT0000044,Archaeologist
-PT0000045,Transport planner
-PT0000046,Museum/gallery curator
-PT0000047,Nutritional therapist
-PT0000048,Information officer
-PT0000049,"Therapist, drama"
-PT0000050,Paediatric nurse
-PT0000051,Cabin crew
-PT0000052,"Loss adjuster, chartered"
-PT0000053,Forest/woodland manager
-PT0000054,Technical sales engineer
-PT0000055,Network engineer
-PT0000056,"Engineer, manufacturing"
-PT0000057,Field seismologist
-PT0000058,Pathologist
-PT0000059,Pensions consultant
-PT0000060,"Librarian, academic"
-PT0000061,Magazine features editor
-PT0000062,Physiological scientist
-PT0000063,Field trials officer
-PT0000064,Applications developer
-PT0000065,"Designer, fashion/clothing"
-PT0000066,"Engineer, civil (contracting)"
-PT0000067,"Therapist, occupational"
-PT0000068,Colour technologist
-PT0000069,"Engineer, site"
-PT0000070,Banker
-PT0000071,Surgeon
-PT0000072,Herpetologist
-PT0000073,Network engineer
-PT0000074,Magazine journalist
-PT0000075,Systems analyst
-PT0000076,Professor Emeritus
-PT0000077,"Editor, commissioning"
-PT0000078,"Teacher, adult education"
-PT0000079,Hospital doctor
-PT0000080,"Programmer, applications"
-PT0000081,"Pharmacist, community"
-PT0000082,"Administrator, education"
-PT0000083,Local government officer
-PT0000084,Environmental manager
-PT0000085,Risk analyst
-PT0000086,Location manager
-PT0000087,Private music teacher
-PT0000088,Advertising account planner
-PT0000089,"Engineer, site"
-PT0000090,Acupuncturist
-PT0000091,Ophthalmologist
-PT0000092,Chief of Staff
-PT0000093,"Engineer, biomedical"
-PT0000094,Outdoor activities/education manager
-PT0000095,Information officer
-PT0000096,"Engineer, biomedical"
-PT0000097,"Conservator, museum/gallery"
-PT0000098,Archaeologist
-PT0000099,Geophysical data processor
-PT0000100,Psychiatric nurse
+PT0000001,Clinical research associate
+PT0000002,"Chemist, analytical"
+PT0000003,Call centre manager
+PT0000004,Audiological scientist
+PT0000005,Medical sales representative
+PT0000006,Insurance underwriter
+PT0000007,Chief Financial Officer
+PT0000008,"Engineer, biomedical"
+PT0000009,Naval architect
+PT0000010,"Programmer, systems"
+PT0000011,Historic buildings inspector/conservation officer
+PT0000012,Chartered certified accountant
+PT0000013,"Administrator, arts"
+PT0000014,Chemical engineer
+PT0000015,Learning disability nurse
+PT0000016,Estate agent
+PT0000017,Further education lecturer
+PT0000018,Hydrographic surveyor
+PT0000019,"Doctor, general practice"
+PT0000020,"Designer, multimedia"
+PT0000021,Economist
+PT0000022,Firefighter
+PT0000023,Multimedia specialist
+PT0000024,Tourism officer
+PT0000025,"Presenter, broadcasting"
+PT0000026,Occupational psychologist
+PT0000027,"Editor, film/video"
+PT0000028,Advertising copywriter
+PT0000029,"Engineer, land"
+PT0000030,Multimedia specialist
+PT0000031,Production manager
+PT0000032,Dance movement psychotherapist
+PT0000033,"Administrator, arts"
+PT0000034,"Secretary, company"
+PT0000035,Trade union research officer
+PT0000036,"Conservator, furniture"
+PT0000037,Television/film/video producer
+PT0000038,Physiological scientist
+PT0000039,"Therapist, drama"
+PT0000040,Immunologist
+PT0000041,Financial risk analyst
+PT0000042,Interior and spatial designer
+PT0000043,Management consultant
+PT0000044,Forest/woodland manager
+PT0000045,Research scientist (medical)
+PT0000046,IT sales professional
+PT0000047,Retail merchandiser
+PT0000048,Music therapist
+PT0000049,"Administrator, arts"
+PT0000050,Chemical engineer
+PT0000051,Therapeutic radiographer
+PT0000052,Patent attorney
+PT0000053,Barrister
+PT0000054,Dietitian
+PT0000055,"Nurse, learning disability"
+PT0000056,"Surveyor, commercial/residential"
+PT0000057,"Buyer, retail"
+PT0000058,Patent examiner
+PT0000059,Research scientist (physical sciences)
+PT0000060,"Engineer, technical sales"
+PT0000061,"Journalist, newspaper"
+PT0000062,Health and safety inspector
+PT0000063,Occupational therapist
+PT0000064,Theatre director
+PT0000065,"Engineer, production"
+PT0000066,Conference centre manager
+PT0000067,Printmaker
+PT0000068,Print production planner
+PT0000069,Training and development officer
+PT0000070,"Administrator, charities/voluntary organisations"
+PT0000071,Rural practice surveyor
+PT0000072,Advertising copywriter
+PT0000073,Operational investment banker
+PT0000074,Market researcher
+PT0000075,Stage manager
+PT0000076,"Pharmacist, community"
+PT0000077,Oceanographer
+PT0000078,Health service manager
+PT0000079,Operations geologist
+PT0000080,Child psychotherapist
+PT0000081,"Engineer, mining"
+PT0000082,Curator
+PT0000083,Airline pilot
+PT0000084,Pharmacologist
+PT0000085,"Scientist, clinical (histocompatibility and immun"
+PT0000086,"Horticulturist, amenity"
+PT0000087,Sports coach
+PT0000088,Psychiatric nurse
+PT0000089,Environmental manager
+PT0000090,Public librarian
+PT0000091,Building surveyor
+PT0000092,"Designer, textile"
+PT0000093,"Scientist, clinical (histocompatibility and immun"
+PT0000094,Local government officer
+PT0000095,Games developer
+PT0000096,Financial risk analyst
+PT0000097,Interior and spatial designer
+PT0000098,Occupational psychologist
+PT0000099,"Education officer, community"
+PT0000100,"Engineer, land"
