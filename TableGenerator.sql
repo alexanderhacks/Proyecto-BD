@@ -326,7 +326,8 @@ CREATE TABLE "Venta"
     cliente_id VARCHAR(10) NOT NULL,
     colaborador_id  VARCHAR(10) NOT NULL,
     fecha      DATE        NOT NULL,
-    hora       TIME   NOT NULL
+    hora       TIME   NOT NULL,
+    qr_id          VARCHAR(50) NOT NULL
 );
 ALTER TABLE "Venta"
     ADD CONSTRAINT "pk_venta"
@@ -340,11 +341,7 @@ ALTER TABLE "Venta"
 CREATE TABLE "VentaEntrada"
 (
     id     VARCHAR(10) not null,
-    venta_id       VARCHAR(10) NOT NULL,
-    fila           VARCHAR(1)    NOT NULL,
-    columna        SMALLINT    NOT NULL,
-    precio_entrada FLOAT       NOT NULL,
-    tipo_entrada   VARCHAR(10) NOT NULL
+    venta_id       VARCHAR(10) NOT NULL
 );
 ALTER TABLE "VentaEntrada"
     ADD CONSTRAINT "pk_ventaentrada"
@@ -352,25 +349,24 @@ ALTER TABLE "VentaEntrada"
     ADD CONSTRAINT "fk_ventaid_ventaentrada"
         FOREIGN KEY (venta_id) REFERENCES "Venta" (id);
 
--- FACTURA ENTRADA
-CREATE TABLE "FacturaEntrada"
+-- BUTACA FUNCION
+CREATE TABLE "ButacaFuncion"
 (
-    id               VARCHAR(10) NOT NULL,
-    venta_id         VARCHAR(10) NOT NULL,
-    funcion_id       VARCHAR(10),
-    cliente_id       VARCHAR(10) NOT NULL,
-    cantidad_entadas SMALLINT    NOT NULL,
-    qr_id            VARCHAR(50) NOT NULL
+    butaca_id       VARCHAR(10) NOT NULL,
+    ventaentrada_id VARCHAR(10) NOT NULL,
+    funcion_id      VARCHAR(10) NOT NULL,
+    nro_fila        VARCHAR(1)    NOT NULL,
+    nro_columna     SMALLINT    NOT NULL,
+    tipo_entrada   VARCHAR(10) NOT NULL,
+    precio_entrada FLOAT       NOT NULL
 );
-ALTER TABLE "FacturaEntrada"
-    ADD CONSTRAINT "pk_facturaventa"
-        PRIMARY KEY (id),
-    ADD CONSTRAINT "fk_funcionid_facturaentrada"
+ALTER TABLE "ButacaFuncion"
+    ADD CONSTRAINT "butacafuncion_id"
+        PRIMARY KEY (butaca_id, ventaentrada_id),
+    ADD CONSTRAINT "fk_funcion_butacafuncion"
         FOREIGN KEY (funcion_id) REFERENCES "Funcion" (funcion_id),
-    ADD CONSTRAINT "fk_ventacliente_facturaentrada"
-        FOREIGN KEY (venta_id) REFERENCES "Venta" (id),
-    ADD CONSTRAINT "fk_clienteid_facturaentrada"
-        FOREIGN KEY (cliente_id) REFERENCES "Clientes" (id);
+    ADD CONSTRAINT "fk_ventaentrada_id"
+        FOREIGN KEY (ventaentrada_id) REFERENCES "VentaEntrada" (id);
 
 -- VENTA PRODUCTO
 CREATE TABLE "VentaProducto"
@@ -387,24 +383,6 @@ ALTER TABLE "VentaProducto"
         FOREIGN KEY (venta_id) REFERENCES "Venta" (id),
     ADD CONSTRAINT "fk_productoid_ventaproducto"
         FOREIGN KEY (producto_id) REFERENCES "Producto" (id);
-
--- BUTACA FUNCION
-CREATE TABLE "ButacaFuncion"
-(
-    butaca_id       VARCHAR(10) NOT NULL,
-    funcion_id      VARCHAR(10) NOT NULL,
-    nro_fila        SMALLINT    NOT NULL,
-    nro_columna     SMALLINT    NOT NULL,
-    ventaentrada_id VARCHAR(10) NOT NULL
-
-);
-ALTER TABLE "ButacaFuncion"
-    ADD CONSTRAINT "butacafuncion_id"
-        PRIMARY KEY (butaca_id),
-    ADD CONSTRAINT "fk_funcion_butacafuncion"
-        FOREIGN KEY (funcion_id) REFERENCES "Funcion" (funcion_id),
-    ADD CONSTRAINT "fk_ventaentrada_id"
-        FOREIGN KEY (ventaentrada_id) REFERENCES "VentaEntrada" (id);
 
 -- ACTUA
 CREATE TABLE "Actua"
@@ -562,3 +540,8 @@ TRUNCATE "VentaProducto" CASCADE;
 COPY "VentaProducto" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\VentaProducto.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "VentaProducto";
+
+TRUNCATE "ButacaFuncion" CASCADE;
+COPY "ButacaFuncion" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\butacaFuncion.csv'
+    DELIMITER ',' CSV HEADER;
+SELECT * FROM "ButacaFuncion";
