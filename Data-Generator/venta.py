@@ -31,6 +31,7 @@ for _ in range(tuples):
     select_data["colaborador_id"].append(colID[random.randint(0, len(colID) - 1)])  # usuarioColaborador
     select_data["fecha"].append(rndmDate(dL, dR))  # coincidir con pelicula o posterior
     select_data["hora"].append(fake.time())
+    select_data["qr_id"].append(fake.pystr())
 
 df_select_data = pd.DataFrame(select_data)
 df_select_data.to_csv('venta.csv', index=False)
