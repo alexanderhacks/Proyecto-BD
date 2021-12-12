@@ -1,6 +1,6 @@
-DROP SCHEMA IF EXISTS cinemania100 CASCADE;
-CREATE SCHEMA cinemania100;
-SET search_path TO cinemania100;
+DROP SCHEMA IF EXISTS cinemania1000000 CASCADE;
+CREATE SCHEMA cinemania1000000;
+SET search_path TO cinemania1000000;
 SHOW search_path;
 
 -- CLIENTES
@@ -399,6 +399,8 @@ ALTER TABLE "Actua"
         REFERENCES "Actores" (id);
 
 
+SET search_path TO cinemania1000000;
+SHOW search_path;
 
 TRUNCATE "Clientes" CASCADE;
 COPY "Clientes" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\clientes.csv'
@@ -408,7 +410,7 @@ SELECT * FROM "Clientes";
 TRUNCATE "PuestoTrabajo" CASCADE;
 COPY "PuestoTrabajo" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\puestoTrabajo.csv'
     DELIMITER ',' CSV HEADER;
-SELECT * FROM "PuestoTrabajo";
+SELECT * FROM "PuestoTrabajo";  -- ==
 
 TRUNCATE "CuentaBancaria" CASCADE;
 COPY "CuentaBancaria" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\cuentaBancaria.csv'
@@ -417,7 +419,7 @@ SELECT * FROM "CuentaBancaria";
 
 TRUNCATE "Producto" CASCADE;
 COPY "Producto" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\productos.csv'
-    DELIMITER ',' CSV HEADER;
+    DELIMITER ',' CSV HEADER;               -- ==
 SELECT * FROM "Producto";
 
 TRUNCATE "Sede" CASCADE;
@@ -438,27 +440,27 @@ SELECT * FROM "ClientesVacunados";
 TRUNCATE "Actores" CASCADE;
 COPY "Actores" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\actores.csv'
     DELIMITER ',' CSV HEADER;
-SELECT * FROM "Actores";
+SELECT * FROM "Actores";        -- ==
 
 TRUNCATE "Genero" CASCADE;
 COPY "Genero" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\genero.csv'
     DELIMITER ',' CSV HEADER;
-SELECT * FROM "Genero";
+SELECT * FROM "Genero";         -- ==
 
 TRUNCATE "Directores" CASCADE;
 COPY "Directores" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\directores.csv'
     DELIMITER ',' CSV HEADER;
-SELECT * FROM "Directores";
+SELECT * FROM "Directores";     -- ==
 
 TRUNCATE "NivelPublico" CASCADE;
 COPY "NivelPublico" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\nivelPublico.csv'
     DELIMITER ',' CSV HEADER;
-SELECT * FROM "NivelPublico";
+SELECT * FROM "NivelPublico";   -- ==
 
 TRUNCATE "Peliculas" CASCADE;
 COPY "Peliculas" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\peliculas.csv'
     DELIMITER ',' CSV HEADER;
-SELECT * FROM "Peliculas";
+SELECT * FROM "Peliculas";      -- ==
 
 TRUNCATE "Actua" CASCADE;
 COPY "Actua" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\actua.csv'
@@ -483,7 +485,7 @@ SELECT * FROM "FuncionVacuna";
 
 TRUNCATE "Membresia" CASCADE;
 COPY "Membresia" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\membresia.csv'
-    DELIMITER ',' CSV HEADER;
+    DELIMITER ',' CSV HEADER;               -- ==
 SELECT * FROM "Membresia";
 
 TRUNCATE "Socios" CASCADE;
@@ -519,7 +521,7 @@ SELECT * FROM "UsuarioCliente";
 TRUNCATE "TipoColaborador" CASCADE;
 COPY "TipoColaborador" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\tipoColaborador.csv'
     DELIMITER ',' CSV HEADER;
-SELECT * FROM "TipoColaborador";
+SELECT * FROM "TipoColaborador";            -- ==
 
 TRUNCATE "UsuarioColaborador" CASCADE;
 COPY "UsuarioColaborador" FROM 'C:\Users\Jeremy\Desktop\2021-2\BD1\Proyecto\usuarioColaborador.csv'
