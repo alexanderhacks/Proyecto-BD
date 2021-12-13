@@ -398,7 +398,17 @@ ALTER TABLE "Actua"
     ADD CONSTRAINT "fk_actor_actua" FOREIGN KEY (actor_id)
         REFERENCES "Actores" (id);
 
-
+CREATE TABLE "Dirige"
+(
+    pelicula_id VARCHAR(10),
+    director_id VARCHAR(10)
+);
+ALTER TABLE "Dirige"
+    ADD CONSTRAINT "pk_dirige"
+        PRIMARY KEY (pelicula_id, director_id),
+    ADD CONSTRAINT "fk_pelicula_dirige" FOREIGN KEY (pelicula_id) REFERENCES "Peliculas" (id),
+    ADD CONSTRAINT "fk_director_dirige" FOREIGN KEY (director_id) REFERENCES "Directores" (id);
+    
 SET search_path TO cinemania1000000;
 SHOW search_path;
 
