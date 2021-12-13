@@ -1,6 +1,6 @@
-DROP SCHEMA IF EXISTS cinemania100000 CASCADE;
-CREATE SCHEMA cinemania100000;
-SET search_path TO cinemania100000;
+DROP SCHEMA IF EXISTS cinemania1000 CASCADE;
+CREATE SCHEMA cinemania1000;
+SET search_path TO cinemania1000;
 SHOW search_path;
 
 -- CLIENTES
@@ -320,12 +320,13 @@ ALTER TABLE "Producto"
 -- VENTAS
 CREATE TABLE "Venta"
 (
-    id         VARCHAR(10) NOT NULL,
-    cliente_id VARCHAR(10) NOT NULL,
+    id              VARCHAR(10) NOT NULL,
+    cliente_id      VARCHAR(10) NOT NULL,
     colaborador_id  VARCHAR(10) NOT NULL,
-    fecha      DATE        NOT NULL,
-    hora       TIME   NOT NULL,
-    qr_id          VARCHAR(50) NOT NULL
+    sede_id         VARCHAR(10) NOT NULL,
+    fecha           DATE        NOT NULL,
+    hora            TIME   NOT NULL,
+    qr_id           VARCHAR(50) NOT NULL
 );
 ALTER TABLE "Venta"
     ADD CONSTRAINT "pk_venta"
@@ -410,147 +411,147 @@ ALTER TABLE "Dirige"
 
 
 TRUNCATE "Clientes" CASCADE;
-COPY "Clientes" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\clientes.csv'
+COPY "Clientes" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\clientes.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Clientes";
 
 TRUNCATE "PuestoTrabajo" CASCADE;
-COPY "PuestoTrabajo" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\puestoTrabajo.csv'
+COPY "PuestoTrabajo" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\puestoTrabajo.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "PuestoTrabajo";  -- ==
 
 TRUNCATE "CuentaBancaria" CASCADE;
-COPY "CuentaBancaria" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\cuentaBancaria.csv'
+COPY "CuentaBancaria" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\cuentaBancaria.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "CuentaBancaria";
 
 TRUNCATE "Producto" CASCADE;
-COPY "Producto" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\productos.csv'
+COPY "Producto" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\productos.csv'
     DELIMITER ',' CSV HEADER;               -- ==
 SELECT * FROM "Producto";
 
 TRUNCATE "Sede" CASCADE;
-COPY "Sede" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\sede.csv'
+COPY "Sede" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\sede.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Sede";
 
 TRUNCATE "Colaboradores" CASCADE;
-COPY "Colaboradores" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\colaboradores.csv'
+COPY "Colaboradores" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\colaboradores.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Colaboradores";
 
 TRUNCATE "ClientesVacunados" CASCADE;
-COPY "ClientesVacunados" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\clientesVacunados.csv'
+COPY "ClientesVacunados" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\clientesVacunados.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "ClientesVacunados";
 
 TRUNCATE "Actores" CASCADE;
-COPY "Actores" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\actores.csv'
+COPY "Actores" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\actores.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Actores";        -- ==
 
 TRUNCATE "Genero" CASCADE;
-COPY "Genero" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\genero.csv'
+COPY "Genero" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\genero.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Genero";         -- ==
 
 TRUNCATE "Directores" CASCADE;
-COPY "Directores" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\directores.csv'
+COPY "Directores" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\directores.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Directores";     -- ==
 
 TRUNCATE "NivelPublico" CASCADE;
-COPY "NivelPublico" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\nivelPublico.csv'
+COPY "NivelPublico" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\nivelPublico.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "NivelPublico";   -- ==
 
 TRUNCATE "Peliculas" CASCADE;
-COPY "Peliculas" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\peliculas.csv'
+COPY "Peliculas" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\peliculas.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Peliculas";      -- ==
 
 TRUNCATE "Actua" CASCADE;
-COPY "Actua" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\actua.csv'
+COPY "Actua" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\actua.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Actua";
 
 TRUNCATE "Sala" CASCADE;
-COPY "Sala" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\sala.csv'
+COPY "Sala" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\sala.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Sala";
 
 
 TRUNCATE "Funcion" CASCADE;
-COPY "Funcion" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\funcion.csv'
+COPY "Funcion" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\funcion.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Funcion";
 
 TRUNCATE "FuncionVacuna" CASCADE;
-COPY "FuncionVacuna" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\funcionVacuna.csv'
+COPY "FuncionVacuna" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\funcionVacuna.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "FuncionVacuna";
 
 TRUNCATE "Membresia" CASCADE;
-COPY "Membresia" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\membresia.csv'
+COPY "Membresia" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\membresia.csv'
     DELIMITER ',' CSV HEADER;               -- ==
 SELECT * FROM "Membresia";
 
 TRUNCATE "Socios" CASCADE;
-COPY "Socios" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\socios.csv'
+COPY "Socios" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\socios.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Socios";
 
 TRUNCATE "Administradores" CASCADE;
-COPY "Administradores" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\administradores.csv'
+COPY "Administradores" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\administradores.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Administradores";
 
 TRUNCATE "Usuario" CASCADE;
-COPY "Usuario" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\usuario.csv'
+COPY "Usuario" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\usuario.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Usuario";
 
 TRUNCATE "SueldoColaborador" CASCADE;
-COPY "SueldoColaborador" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\sueldoColaborador.csv'
+COPY "SueldoColaborador" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\sueldoColaborador.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "SueldoColaborador";
 
 TRUNCATE "UsuarioAdministrador" CASCADE;
-COPY "UsuarioAdministrador" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\usuarioAdministrador.csv'
+COPY "UsuarioAdministrador" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\usuarioAdministrador.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "UsuarioAdministrador";
 
 TRUNCATE "UsuarioCliente" CASCADE;
-COPY "UsuarioCliente" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\usuarioCliente.csv'
+COPY "UsuarioCliente" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\usuarioCliente.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "UsuarioCliente";
 
 TRUNCATE "TipoColaborador" CASCADE;
-COPY "TipoColaborador" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\tipoColaborador.csv'
+COPY "TipoColaborador" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\tipoColaborador.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "TipoColaborador";            -- ==
 
 TRUNCATE "UsuarioColaborador" CASCADE;
-COPY "UsuarioColaborador" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\usuarioColaborador.csv'
+COPY "UsuarioColaborador" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\usuarioColaborador.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "UsuarioColaborador";
 
 TRUNCATE "Venta" CASCADE;
-COPY "Venta" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\venta.csv'
+COPY "Venta" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\venta.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "Venta";
 
 TRUNCATE "VentaEntrada" CASCADE;
-COPY "VentaEntrada" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\ventaEntrada.csv'
+COPY "VentaEntrada" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\ventaEntrada.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "VentaEntrada";
 
 TRUNCATE "VentaProducto" CASCADE;
-COPY "VentaProducto" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\VentaProducto.csv'
+COPY "VentaProducto" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\VentaProducto.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "VentaProducto";
 
 TRUNCATE "ButacaFuncion" CASCADE;
-COPY "ButacaFuncion" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania100K\butacaFuncion.csv'
+COPY "ButacaFuncion" FROM 'C:\Users\Jeremy\Desktop\bd1P\Proyecto-BD\Data-Generator\cinemania1000\butacaFuncion.csv'
     DELIMITER ',' CSV HEADER;
 SELECT * FROM "ButacaFuncion";

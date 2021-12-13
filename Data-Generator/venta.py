@@ -37,3 +37,32 @@ df_select_data = pd.DataFrame(select_data)
 df_select_data.to_csv('venta.csv', index=False)
 df_select_data.drop_duplicates(keep='first', inplace=True)
 display(df_select_data)
+
+
+# ----------------------------------------------------------------------------
+
+
+import pandas as pd
+from IPython.display import display
+from collections import defaultdict
+import random
+
+select_data = defaultdict(list)
+venta = pd.read_csv("venta.csv")
+sede = list(pd.read_csv("sede.csv")["id"])
+
+select_data['id'] = list(venta["id"])
+select_data['cliente_id'] = list(venta["cliente_id"])
+select_data['colaborador_id'] = list(venta["colaborador_id"])
+
+for i in range(len(sede)):
+    select_data["sede_id"].append(sede[random.randint(0, len(sede)-1)])
+
+select_data['fecha'] = list(venta["fecha"])
+select_data['hora'] = list(venta["hora"])
+select_data['qr_id'] = list(venta["qr_id"])
+
+df_select_data = pd.DataFrame(select_data)
+df_select_data.drop_duplicates(keep='first', inplace=True)
+df_select_data.to_csv('venta.csv', index=False)
+display(df_select_data)
