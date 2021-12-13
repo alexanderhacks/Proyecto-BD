@@ -254,8 +254,7 @@ CREATE TABLE "Peliculas"
     genero_id       VARCHAR(10)  NOT NULL,
     duracion_h      FLOAT        NOT NULL,
     resena          VARCHAR(100) NOT NULL,
-    nivelpublico_id VARCHAR(10)  NOT NULL,
-    id_directores VARCHAR(10)
+    nivelpublico_id VARCHAR(10)  NOT NULL
 );
 ALTER TABLE "Peliculas"
     ADD CONSTRAINT "pk_peliculas"
@@ -263,9 +262,7 @@ ALTER TABLE "Peliculas"
     ADD CONSTRAINT "fk_generoid_peliculas"
         FOREIGN KEY (genero_id) REFERENCES "Genero" (id),
     ADD CONSTRAINT "fk_nivelpublicoid_peliculas"
-        FOREIGN KEY (nivelpublico_id) REFERENCES "NivelPublico" (id),
-    ADD CONSTRAINT "fk_iddirectores_peliculas"
-        FOREIGN KEY (id_Directores) REFERENCES "Directores" (id);
+        FOREIGN KEY (nivelpublico_id) REFERENCES "NivelPublico" (id);
 
 -- SALA
 CREATE TABLE "Sala"
