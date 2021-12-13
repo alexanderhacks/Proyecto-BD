@@ -72,7 +72,7 @@ AS
 $$
 BEGIN
 	INSERT INTO "Peliculas"(nombre, idioma, fecha_adquision, fecha_estreno, genero_id, duracion_h, resena, nivelpublico_id, id_directores)
-	VALUES (NEW.cliente_id, NEW.membresia_id);
+	VALUES (NEW.nombre, NEW.idioma, NEW.fecha_adquision, NEW.fecha_estreno, NEW.genero_id, NEW.duracion_h, NEW.resena, NEW.nivelpublico_id, NEW.id_directores);
 RETURN NEW;
 END;
 $$
@@ -84,4 +84,26 @@ ON "Peliculas"
 FOR EACH ROW
 EXECUTE PROCEDURE nuevopelicula_trigger_func();
 
+-- 3. Stored Procedure
+CREATE PROCEDURE reserva(
+	varchar(10) butaca_id,
+	varchar(10) funcion_id,
+	varchar(1) nro_fila,
+	smallint nro_columna
+)
+language plpgsql
+AS $$
+BEGIN
+	IF (butaca_id, funcion_id, nro_fila, nro_columna) NOT IN
+	(
+		SELECT butaca_id, funcion_id, nro_fila, nro_columna
+		FROM ButacaFuncion
+	)
+	INSERT INTO "ButacaFuncion"(butaca_id, ventaentrada_id, funcion_id, nro_fila, nro_columna, tipo_entrada, precio_entrada)
+	VALUES (NEW.butaca_id, NEW.ventaentrada_id, NEW.funcion_id, NEW.nro_fila, NEW.nro_columna, NEW.tipo_entrada, NEW.precio_entrada);
+	ELSE
+		THROW 51000, 'El asiento ya ha sido reservado', 1;  
+	COMMIT
+END; $$
+call reserva(####, #####, ####, ####);
 
