@@ -5,25 +5,25 @@ CREATE FUNCTION updateDescription(
     id_pelicula varchar(10),
     newDescription varchar(100)
 ) RETURNS VOID AS
-$$
+$$ LANGUAGE plpgsql;
 BEGIN
     UPDATE "Peliculas"
     SET resena = newDescription
     WHERE id = id_pelicula;
 END
-$$;
+$$ LANGUAGE plpgsql;
 -- Configuracion de la contraseña del usuario
 CREATE FUNCTION updatePassword(
     username varchar(15),
     newPassword varchar(15)
 ) RETURNS VOID AS
-$$
+$$ LANGUAGE plpgsql;
 BEGIN
     UPDATE "Usuario"
     SET contrasena = newPassword
     WHERE usuario = username;
 END
-$$;
+$$ LANGUAGE plpgsql;
 
 
 
@@ -65,8 +65,7 @@ BEGIN
 	VALUES (NEW.cliente_id, NEW.membresia_id);
 RETURN NEW;
 END;
-$$
-LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql;
 
 CREATE TRIGGER nuevosocio_insert_trigger
 AFTER INSERT
